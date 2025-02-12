@@ -1,84 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Birthday Page</title>
-    </head>
-    <body>
-        <div>
-            <nav>
-                <ul>
-                    <li><a href="">logo</a> </li>
-                    <a href=""><li>About Us</li></a>
-                    <a href=""><li>Services</li></a>
-                    <a href=""><li>Portfolios</li></a>
-                    <a href=""><li>Blog</li></a>
-                    <a href=""><li>Contact Us</li></a>
-                    <a href=""><li>User</li></a>
-                </ul>
-            </nav>
-        </div>
-        <center><h1>Birthday Parties</h1></center>
-        <hr>
-        <center><p style="width: 90%; text-align: justify;">Choosing our event organizing company for your birthday party means a stress-free and memorable celebration tailored to your unique style and preferences. Whether it's an intimate gathering or a grand event, we specialize in crafting personalized experiences that reflect your personality and make every moment unforgettable. From fun themes and decorations to seamless coordination of activities and entertainment, we handle all the details so you can focus on enjoying your special day. With our creativity, expertise, and attention to detail, we'll turn your birthday party into an extraordinary experience that you and your guests will cherish for years to come.</p></center>
-        <hr>
-        <center><div>
-            <img src="birth1.jpg" alt="Birthday Image" style="width: 45%;">
-            <img src="birth2.jpg" alt="Birthday Image" style="width: 45%;">
-            <img src="birth3.png" alt="Birthday Image" style="width: 45%;">
-            <img src="birth4.jpg" alt="Birthday Image" Style="width: 45%;">
-        </div></center>>
-        <hr>
-        <center><h2>What we offer</h2></center>
-        <ul>
-            <li>Childrens Birthday Party</li>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Page</title>
+    <style>
+        /* Internal CSS */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* White background */
+            color: #333; /* Dark text color for contrast */
+        }
+
+        h4 {
+            color: #f1f4f7; /* Primary color for headings */
+        }
+        h1 {
+            color: #121213; /* Primary color for headings */
+        }
+        h2 {
+            color: #000000; /* Primary color for headings */
+        }
+
+        p {
+            color: #555; /* Slightly lighter text color */
+        }
+
+        nav {
+            background-color: #000000; /* Navigation bar color */
+            padding: 10px 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin-right: 15px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #000000; /* Darker shade on hover */
+            border-radius: 5px;
+        }
+
+        hr {
+            border: 1px solid #000000;
+            margin: 20px 0;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .image-gallery img {
+            width: 30%; /* Adjusts the size to fit 2 images per row */
+            height: auto;
+            object-fit: cover;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        footer {
+            background-color: #000000; /* Footer color */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer div {
+            margin-bottom: 20px;
+        }
+
+        footer img {
+            margin: 5px;
+        }
+
+        #socialMediaLogos img {
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        #socialMediaLogos img:hover {
+            opacity: 0.7; /* Slightly transparent on hover */
+        }
+
+        /* Styling for the 'What We Offer' section */
+        table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #000000;
+            color: white;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+        td ul {
+            padding-left: 20px;
+        }
+
+        td ul li {
+            list-style-type: disc;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <nav>
             <ul>
-                <li>DJ</li>
-                <li>Games</li>
-                <li>Tattoo Artist</li>
-                <li>Balloon Decor</li>
-                <li>Mascots</li>
+                <li><a href="./home.html"><img height="30" width="30" src="./images/logo.png" alt="Logo" style="padding-right: 3%;"></a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="./services.html">Services</a></li>
+                <li><a href="">Portfolios</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Contact Us</a></li>
+                <li><a href="">User </a></li>
             </ul>
-            <li>Adult Birthday Party</li>
-            <li>Catering</li>
-            <li>Photographer</li>
-            <li>Venue</li>
-            <li>Decorator</li>
-        </ul>
+        </nav>
+    </div>
+    <div class="center">
+        <h1>Birthday Parties</h1>
         <hr>
-        <footer>
-            <div>
-                <img src="" alt="">
-                <p>Craftworld Events is a leading corporate event management company operating nationally from Mumbai, Delhi, Bangalore, Gurgaon, Pune and other cities in India</p>
-                <h4>Contact Info</h4>
-                <p>Address: F5-6, 5th floor, pinnacle Business park,shanti nagar, mahakali caves road andheri east mumbai-400093
-    
-                    Email: info@cwe.in</p>
-            </div>
-            <div>
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About Us</a></li>
-                    <li><a href="">Projects</a></li>
-                    <li><a href="">Our Blog</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Our Location</h4>
-                <img src="ourlocations.webp" alt="">
-                <h4>Folow Us on</h4>
-                <div id="socialMediaLogos">
-                        <img width="5%" height="5%" src="./images/Screenshot 2025-01-15 133424.png" alt="">
-                        <img width="5%" height="5%" src="./images/yt.png" alt="">
-                        <img width="5%" height="5%" src="./images/x.png" alt="">
-                        <img width="5%" height="5%" src="./images/linkedin.png" alt="">
-                        <img width="5%" height="5%" src="./images/insta.png" alt="">
-                </div>
-            </div>
-            <hr>
-        <p>© 2025 Eventra Events Management Company. All Rights Reserved.</p>
-        </footer> 
-    </body>
+        <p style="width: 90%; text-align: justify; padding-left: 5%;">Choosing our event organizing company for your birthday party means a stress-free and memorable celebration tailored to your unique style and preferences. Whether it's an intimate gathering or a grand event, we specialize in crafting personalized experiences that reflect your personality and make every moment unforgettable. From fun themes and decorations to seamless coordination of activities and entertainment, we handle all the details so you can focus on enjoying your special day. With our creativity, expertise, and attention to detail, we'll turn your birthday party into an extraordinary experience that you and your guests will cherish for years to come.</p>
+        <hr>
+
+        <!-- Image Gallery -->
+        <div class="image-gallery">
+            <img src="C:\Users\mpstme.student\Downloads\Eventra-main\Eventra-main\images\birth1.jpg" alt="Birthday Image">
+            <img src="C:\Users\mpstme.student\Downloads\Eventra-main\Eventra-main\images\birth2.jpg" alt="Birthday Image">
+            <img src="C:\Users\mpstme.student\Downloads\Eventra-main\Eventra-main\images\birth3.png" alt="Birthday Image">
+            <img src="C:\Users\mpstme.student\Downloads\Eventra-main\Eventra-main\images\birth4.jpg" alt="Birthday Image" style="padding-left: 35%;">
+        </div>
+
+        <hr>
+
+        <!-- 'What We Offer' Section - Table Layout -->
+        <h2>What We Offer</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Package</th>
+                    <th>Services</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Children's Birthday Party</td>
+                    <td>
+                        <ul>
+                            <li>DJ</li>
+                            <li>Games</li>
+                            <li>Tattoo Artist</li>
+                            <li>Balloon Decor</li>
+                            <li>Mascots</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Adult Birthday Party</td>
+                    <td>
+                        <ul>
+                            <li>Catering</li>
+                            <li>Photographer</li>
+                            <li>Venue</li>
+                            <li>Decorator</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+    </div>
+
+    <footer>
+        <div>
+            <p>Craftworld Events is a leading corporate event management company operating nationally from Mumbai, Delhi, Bangalore, Gurgaon, Pune, and other cities in India.</p>
+            <h4>Contact Info</h4>
+            <p>Address: F5-6, 5th floor, Pinnacle Business Park, Shanti Nagar, Mahakali Caves Road, Andheri East, Mumbai-400093<br>
+            Email: info@cwe.in</p>
+        </div>
+        <div>
+            <h4>Company</h4>
+        </div>
+    </footer>
+</body>
 </html>
