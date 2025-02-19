@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/contactus.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <title>Contact Us</title>
 </head>
 
@@ -23,57 +27,58 @@
         <hr>
         <h1>Get in touch with us today!</h1>
     </header>
-    <form action="">
-        <label for="queryType">Select type of mail:</label>
+    <center><div id="formContainer"><form action="">
+        <label for="queryType">Select type of mail</label><br>
         <select name="queryType" id="queryType">
             <option value="Review">Query</option>
             <option value="Review">Feedback</option>
             <option value="Review">Suggestions</option>
         </select>
         <br><br>
-        <label for="email">Enter email ID:</label> <br><input type="email" id="email"><br><br>
-        <label for="subject">Enter Subject:</label> <br><input type="text" id="subject" maxlength="30"><br><br>
-        <label for="content">Enter Details:</label> <br><textarea name="content" id="content" rows="5" cols="40"
+        <label for="email">Enter email ID</label> <br><input type="email" id="email"><br><br>
+        <label for="subject">Enter Subject</label> <br><input type="text" id="subject" maxlength="30"><br><br>
+        <label for="content">Enter Details</label> <br><textarea name="content" id="content" rows="5" cols="40"
             maxlength="500"></textarea>
-        <br><br><label for="file">Attach relevent files: </label> <br><input type="file">
+        <br><br><label for="file">Attach relevent files </label> <br><input type="file">
         <br><br><label for="copy">Do you need a copy?</label> <br><label for="yes">Yes</label><input type="radio" name="copy" id="yes"><br><label for="no">No</label><input type="radio" name="copy" id="no">
         <br><br><input type="submit">
-    </form>
+    </form></div></center>
+    <hr>
+    
     <footer>
-        <hr>
-        <div>
+        <div class="griddivs">
             <img src="" alt="">
-            <p>Eventra is a leading corporate event management company operating nationally from Mumbai, Delhi,
-                Bangalore, Gurgaon, Pune and other cities in India</p>
+            <p>Craftworld Events is a leading corporate event management company operating nationally from Mumbai, Delhi, Bangalore, Gurgaon, Pune and other cities in India</p>
             <h4>Contact Info</h4>
-            <p>Address: F5-6, 5th floor, pinnacle Business park,shanti nagar, mahakali caves road andheri east
-                mumbai-400093
+            <p>Address: F5-6, 5th floor, pinnacle Business park,shanti nagar, mahakali caves road andheri east mumbai-400093
+
 
                 Email: info@cwe.in</p>
         </div>
-        <div>
+        <div class="griddivs">
             <h4>Company</h4>
             <ul>
                 <li><a href="">Home</a></li>
                 <li><a href="">About Us</a></li>
                 <li><a href="">Projects</a></li>
                 <li><a href="">Our Blog</a></li>
+                <li><a href="./services.html">Our Services</a></li>
             </ul>
         </div>
-        <div>
-            <h4>Our Location</h4>
+        <div class="griddivs">
+            <h4>Our Locations</h4>
             <img src="./images/ourlocations.webp" alt="">
             <h4>Folow Us on</h4>
             <div id="socialMediaLogos">
-                <img width="5%" height="5%" src="./images/Screenshot 2025-01-15 133424.png" alt="">
-                <img width="5%" height="5%" src="./images/yt.png" alt="">
-                <img width="5%" height="5%" src="./images/x.png" alt="">
-                <img width="5%" height="5%" src="./images/linkedin.png" alt="">
-                <img width="5%" height="5%" src="./images/insta.png" alt="">
+                    <img width="5%" height="5%" src="./images/Screenshot 2025-01-15 133424.png" alt="">
+                    <img width="5%" height="5%" src="./images/yt.png" alt="">
+                    <img width="5%" height="5%" src="./images/x.png" alt="">
+                    <img width="5%" height="5%" src="./images/linkedin.png" alt="">
+                    <img width="5%" height="5%" src="./images/insta.png" alt="">
             </div>
         </div>
-        <hr>
-        <p>© 2025 Eventra Events Management Company. All Rights Reserved.</p>
+    
+    <p>© 2025 Eventra Events Management Company. All Rights Reserved.</p>
     </footer>
 </body>
 
