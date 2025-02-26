@@ -1,0 +1,202 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+/* Header and Navigation */
+h1, h2, h4 {
+    color: #fff;
+}
+
+nav {
+    background-color: #333;
+    padding: 20px 30px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 15px;
+    position: relative;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: transform 0.3s ease, color 0.3s ease, letter-spacing 0.3s ease;
+}
+
+nav a:hover {
+    transform: translateY(-5px); /* Move navbar items up */
+    color: #f1f1f1; /* Change text color on hover */
+    background-color: #444;
+    border-radius: 5px;
+    letter-spacing: 1px; /* Add space between letters */
+}
+
+/* Logo */
+nav img {
+    transition: transform 0.3s ease;
+}
+
+nav img:hover {
+    transform: scale(1.2); /* Slightly enlarge logo */
+}
+
+/* Content Section */
+.center {
+    padding: 20px;
+    margin-bottom: 50px; /* Ensure content has space */
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out; /* Fade-in effect for header */
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 40px;
+    animation: fadeIn 1s ease-out 0.5s; /* Fade-in with delay */
+}
+
+/* Paragraph Text */
+.content-text {
+    width: 90%;
+    text-align: justify;
+    margin: 0 auto;
+    padding-left: 5%;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: typingEffect 3s steps(40) 1s forwards, fadeIn 2s ease-out 0.5s forwards; /* Typing effect */
+}
+
+/* Image Gallery */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.image-gallery img {
+    width: 25%; /* Slightly smaller images */
+    height: auto;
+    object-fit: cover;
+    border: 3px solid #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth scaling and shadow on hover */
+}
+
+.image-gallery img:hover {
+    transform: scale(1.05); /* Slightly enlarge images */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Add shadow effect */
+}
+
+/* Table */
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+    animation: fadeIn 1s ease-out 1s; /* Fade-in effect for table */
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+td {
+    background-color: #222;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+    animation: fadeIn 1s ease-out 1.5s; /* Fade-in effect for footer */
+}
+
+footer p {
+    margin-bottom: 20px;
+}
+
+footer h4 {
+    font-size: 1.5rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes typingEffect {
+    0% {
+        width: 0;
+        opacity: 1;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+/* Smooth Scroll (Optional) */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Additional styling to make the webpage longer */
+.content-text::after {
+    content: '';
+    display: block;
+    height: 200px; /* Adds extra space at the bottom of the page */
+}
+
+section {
+    padding: 50px 0;
+}
