@@ -96,7 +96,7 @@ label{
 input[type="submit"]:hover {
     background-color: #88db65; 
 }
-input[type="email"], input[type="text"], textarea, select, input[type="file"] {
+input[type="email"], input[type="text"], textarea, select, input[type="file"],input[type="number"] {
     padding: 10px;
     border: 1px solid black;
     border-radius: 5px;
