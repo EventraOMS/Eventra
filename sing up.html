@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            let fname = document.getElementById("fname").value.trim();
+            let lname = document.getElementById("lname").value.trim();
+            let age = document.getElementById("age").value;
+            let phone = document.getElementById("phone").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value;
+            let repassword = document.getElementById("repassword").value;
+            let address = document.getElementById("address").value.trim();
+            let gender = document.querySelector('input[name="gender"]:checked');
+            
+            let phonePattern = /^\+?[0-9]{10,15}$/;
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+            if (fname === "" || lname === "" || fname === null || lname === null) {
+                alert("First and Last Name are required.");
+                return false;
+            }
+            if (age < 18 || age > 99) {
+                alert("Age must be between 18 and 99.");
+                return false;
+            }
+            if (!phonePattern.test(phone)) {
+                alert("Invalid phone number.");
+                return false;
+            }
+            if (!gender) {
+                alert("Please select a gender.");
+                return false;
+            }
+            if (address === "") {
+                alert("Address cannot be empty.");
+                return false;
+            }
+            if (!emailPattern.test(email)) {
+                alert("Invalid email address.");
+                return false;
+            }
+            if (!passwordPattern.test(password)) {
+                alert("Password must be at least 8 characters long, include an uppercase letter, a lowercase letter, a number, and a special character.");
+                return false;
+            }
+            if (password !== repassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+            alert("Form submitted successfully!");
+            document.getElementById("signup-form").submit();
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <ul class="nav-list">
+                <li><a href="" class="logo">Logo</a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Portfolios</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Contact Us</a></li>
+                <li><a href="">User</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="signup-section">
+            <h1>Sign Up</h1>
+            <hr>
+            <div id="form-container">
+                <form id="signup-form" onsubmit="validateForm(event)">
+                    <fieldset class="fieldset">
+                        <legend>Personal Information</legend>
+                        <label for="fname">First Name:</label>
+                        <input type="text" id="fname" name="fname" placeholder="John">
+                        
+                        <label for="lname">Last Name:</label>
+                        <input type="text" id="lname" name="lname" placeholder="Doe">
+                        
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" name="age">
+                        
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+91 987654321">
+                        
+                        <label>Gender:</label>
+                        <div class="gender-group">
+                            <input type="radio" id="male" name="gender" value="male">
+                            <label for="male">Male</label>
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female">Female</label>
+                        </div>
+                        
+                        <label for="address">Address:</label>
+                        <textarea id="address" name="address" placeholder="Your Address goes here." rows="5"></textarea>
+                    </fieldset>
+                    
+                    <fieldset class="fieldset">
+                        <legend>Account Information</legend>
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" placeholder="abc@xyz.com">
+                        
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password">
+                        
+                        <label for="repassword">Reconfirm Password:</label>
+                        <input type="password" id="repassword" name="repassword">
+                    </fieldset>
+                    
+                    <div class="form-buttons">
+                        <input type="submit" value="Sign Up">
+                        <input type="reset" value="Reset">
+                    </div>
+                </form>
+                <p>Already a User? <a href="signin.html">Sign In</a></p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
