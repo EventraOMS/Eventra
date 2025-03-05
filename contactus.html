@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/contactus.css">
+    <link rel="stylesheet" href="contactus.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
@@ -36,6 +36,7 @@
         </select>
         <br><br>
         <label for="email">Enter email ID</label> <br><input type="email" id="email"><br><br>
+        <label for="email">Enter phone number</label> <br><input type="number" id="phone"><br><br>
         <label for="subject">Enter Subject</label> <br><input type="text" id="subject" maxlength="30"><br><br>
         <label for="content">Enter Details</label> <br><textarea name="content" id="content" rows="5" cols="40"
             maxlength="500"></textarea>
@@ -81,5 +82,50 @@
     <p>© 2025 Eventra Events Management Company. All Rights Reserved.</p>
     </footer>
 </body>
+<script>
+  
+    window.onload = function () {
+        document.querySelector("form").onsubmit = function (event) {
+            let email = document.getElementById("email").value;
+            let subject = document.getElementById("subject").value;
+            let content = document.getElementById("content").value;
+            let phone = document.getElementById("phone").value;
+
+            
+            let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            let charRegex = /^[a-zA-Z0-9\s.,!?'"-]+$/; 
+            let phoneRegex = /^[0-9]{10}$/; 
+
+            let isValid = true;
+
+            
+            if (!emailRegex.test(email)) {
+                alert("Invalid Email Address");
+                isValid = false;
+            }
+            if (!charRegex.test(subject)) {
+                alert("Subject should contain only letters, numbers, and basic punctuation.");
+                isValid = false;
+            }
+            if (!charRegex.test(content)) {
+                alert("Content should contain only letters, numbers, and basic punctuation.");
+                isValid = false;
+            }
+            if (phone && !phoneRegex.test(phone)) {
+                alert("Invalid Phone Number (Must be 10 digits)");
+                isValid = false;
+            }
+
+            if (!isValid) {
+                event.preventDefault(); 
+            } else {
+                alert("Form submitted successfully!");
+            }
+        };
+    };
+
+
+
+</script>
 
 </html>
