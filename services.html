@@ -3,54 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <title>Our Services</title>
+    <style>
+        body{
+            font-family: "Outfit", serif;
+            font-optical-sizing: auto;
+            font-weight: 100px;
+            font-style: normal;
+        }
+       nav {
+            background-color:  #60079c;
+            
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: #AEEA94;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin-right: 15px;
+            
+        }
+        footer{
+            display: grid;
+            gap: 10px;
+            width: 200vh;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 90% 10%;
+            grid-template-rows: 1;
+    
+        }
+        footer> p{
+            grid-column: span 3;
+            text-align: center;
+        }
+                
+        nav a:hover {
+            font-weight: bolder; 
+            border-radius: 5px;
+        }
+        p,h1,h2,h3,h4,li,a{
+            color: #AEEA94;
+        }
+        .griddivs{
+            grid-column: span 1;
+        }
+        #sponsors{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+        #sponsors h3{
+            text-align: center;
+            grid-column: span 5;
+        }
+        #stats{
+            display: flex;
+            justify-content: center;
+            gap: 20%;
+        }
+        #testimonies{
+            display: flex;
+            justify-content: center;
+        }
+        #testimonies div{
+            text-align: center;
+        }
+        #services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.service {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+}
+
+.service h2 {
+    color: #60079c;
+}
+
+.service p {
+    color: black;
+}
+
+.service img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+    </style>
 </head>
-<body>
-    <header>
+<body style=" background-color: #60079c;">
     <nav>
         <ul>
-            <a href="./home.html"><img height="25%" width="25%" src="./images/logo.png" alt=""></a>
-            <a href="">About Us</a>
-            <a href="./services.html">Services</a>
-            <a href="">Portfolios</a>
-            <a href="">Blog</a>
-            <a href="">Contact Us</a>
-            <a href="">User</a>
-    
+            <li><a href="./home.html"><img height="25%" width="25%" src="./images/logo.png" alt=""></a></li>
+            <a href=""><li>About Us</li></a>
+            <a href="./services.html"><li>Services</li></a>
+            <a href=""><li>Portfolios</li></a>
+            <a href=""><li>Blog</li></a>
+            <a href=""><li>Contact Us</li></a>
+            <a href=""><li>User</li></a>
+        </ul>
     </nav>
     <hr>
-    <h1>"Your Vision, Our Creation"</h1></header>
-    <section>
-        <table>
-            <tr>
-                <td width="50%" height="50%"> <h2>Birthdays</h2>
-                    <p>Make your birthday unforgettable with our expert planning and creative touch. From vibrant décor to interactive entertainment, we ensure every detail is tailored to your style. Whether it's an intimate gathering or a grand celebration, we'll craft the perfect party for you and your guests.</p>
-                    <img width="50%" height="50%" src="./images/birthdayService.jpg" alt="">
-                </td>
-                <td width="50%" height="50%"><h2>Weddings</h2>
-                    <p>Your dream wedding deserves meticulous planning and flawless execution. We specialize in creating magical moments that reflect your love story. From elegant venues to breathtaking decorations, our team ensures your big day is as perfect as you’ve always imagined.</p>
-                    <img width="50%" height="50%" src="./images/weddingService.png" alt=""></td>
-            </tr>
-            <tr>
-                <td width="50%" height="50%" > <h2>Anniversaries</h2>
-                    <p>Celebrate your milestones in style with our tailored anniversary planning. Whether it’s a romantic dinner for two or a grand celebration with loved ones, we make your special day truly memorable.</p>
-                    <img width="50%" height="50%" src="./images/anniversaryService.jpg" alt=""></td>
-                <td width="50%" height="50%"><h2>Themed Parties</h2>
-                    <p>Bring your unique party ideas to life with our creative themed event services. From whimsical fairy tales to retro vibes, we craft immersive experiences that your guests will adore.</p>
-                    <img width="50%" height="50%" src="./images/themedPartyService.jpg" alt=""></td>
-            </tr>
-            <tr>
-                <td width="50%" height="50%"> <h2>Corporate Events</h2>
-                    <p>Host seamless and impactful corporate events with our professional services. Whether it’s a product launch, conference, or team-building activity, we manage every aspect to ensure a smooth and successful event that leaves a lasting impression on your attendees.</p>
-                    <img width="50%" height="50%" src="./images/corporateEventService.jpg" alt=""></td>
-                <td width="50%" height="50%"><h2>Catering Services</h2>
-                    <p>Delight your guests with exceptional cuisine curated by our expert chefs. From exquisite appetizers to decadent desserts, we offer customized menus to suit every taste and occasion. Our catering service guarantees a dining experience your guests will rave about.</p>
-                    <img width="50%" height="50%" src="./images/cateringService.webp" alt=""></td>
-            </tr>
-        </table>
-        <hr>
-    </section>
-        <!--
+    <center><h1>"Your Vision, Our Creation"</h1></center>
+    <div>
         <div id="services">
             <div id="birthdayService" class="service">
                 <h2>Birthdays</h2>
@@ -82,30 +162,34 @@
                 <p>Delight your guests with exceptional cuisine curated by our expert chefs. From exquisite appetizers to decadent desserts, we offer customized menus to suit every taste and occasion. Our catering service guarantees a dining experience your guests will rave about.</p>
                 <img width="50%" height="50%" src="./images/cateringService.webp" alt="">
             </div>
-            <h2>Not sure what you need? Check out our <a href="">portfolio</a></h2>
+           
 
 
-        </div>-->
+        </div> <h2 style="text-align: center;">Not sure what you need? Check out our <a href="">portfolio</a></h2>
+    </div>
+    <hr>
     <footer>
-        <div>
+        <div class="griddivs">
             <img src="" alt="">
-            <p>Craftworld Events is a leading corporate event management company operating nationally from Mumbai, Delhi, Bangalore, Gurgaon, Pune and other cities in India</p>
+            <p>Eventra is a leading corporate event management company operating nationally from Mumbai, Delhi, Bangalore, Gurgaon, Pune and other cities in India</p>
             <h4>Contact Info</h4>
             <p>Address: F5-6, 5th floor, pinnacle Business park,shanti nagar, mahakali caves road andheri east mumbai-400093
 
+
                 Email: info@cwe.in</p>
         </div>
-        <div>
+        <div class="griddivs">
             <h4>Company</h4>
             <ul>
                 <li><a href="">Home</a></li>
                 <li><a href="">About Us</a></li>
                 <li><a href="">Projects</a></li>
                 <li><a href="">Our Blog</a></li>
+                <li><a href="./services.html">Our Services</a></li>
             </ul>
         </div>
-        <div>
-            <h4>Our Location</h4>
+        <div class="griddivs">
+            <h4>Our Locations</h4>
             <img src="./images/ourlocations.webp" alt="">
             <h4>Folow Us on</h4>
             <div id="socialMediaLogos">
@@ -116,7 +200,7 @@
                     <img width="5%" height="5%" src="./images/insta.png" alt="">
             </div>
         </div>
-        <hr>
+    
     <p>© 2025 Eventra Events Management Company. All Rights Reserved.</p>
     </footer>
 </body>
