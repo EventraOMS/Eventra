@@ -15,7 +15,7 @@
             font-style: normal;
         }
        nav {
-            background-color:  #60079c;/* Navigation bar color */
+            background-color:  #60079c;
             
         }
 
@@ -40,11 +40,15 @@
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: 90% 10%;
             grid-template-rows: 1;
-            
+    
         }
-        
+        footer> p{
+            grid-column: span 3;
+            text-align: center;
+        }
+                
         nav a:hover {
-            font-weight: bolder; /* Darker shade on hover */
+            font-weight: bolder; 
             border-radius: 5px;
         }
         p,h1,h2,h3,h4,li,a{
@@ -75,6 +79,50 @@
             text-align: center;
         }
         
+        .carousel {
+    position: relative;
+    width: 80%; 
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.carousel-track img {
+    width: 100%;
+    flex: 0 0 100%;
+    object-fit: cover;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10;
+}
+
+#prev { left: 10px; }
+#next { right: 10px; }
+
+
 
 </style>
 </head>
@@ -93,12 +141,17 @@
         </nav>
 
     <hr>
-    <div id="carousel">
-        <img width="25%" height="25%" src="./images/event1.webp" alt="">
-        <img width="25%" height="25%" src="./images/event2.webp" alt="">
-        <img width="25%" height="25%" src="./images/event4.jpg" alt="">
-        <img width="25%" height="25%" src="./images/event5.avif" alt="">
-        <img width="25%" height="25%" src="/images/event3.jpg" alt="">
+  
+    <div class="carousel">
+        <button id="prev" class="nav-btn">‹</button>
+        <div class="carousel-track">
+            <img width="25%" height="25%" src="./images/event1.webp" alt="">
+            <img width="25%" height="25%" src="./images/event2.webp" alt="">
+            <img width="25%" height="25%" src="./images/event4.jpg" alt="">
+            <img width="25%" height="25%" src="./images/event5.avif" alt="">
+            <img width="25%" height="25%" src="/images/event3.jpg" alt="">
+        </div>
+        <button id="next" class="nav-btn">›</button>
     </div>
     <hr>
     <div id="article">
@@ -143,7 +196,7 @@
     <footer>
         <div class="griddivs">
             <img src="" alt="">
-            <p>Craftworld Events is a leading corporate event management company operating nationally from Mumbai, Delhi, Bangalore, Gurgaon, Pune and other cities in India</p>
+            <p>Eventra is a leading corporate event management company operating nationally from Mumbai, Delhi, Bangalore, Gurgaon, Pune and other cities in India</p>
             <h4>Contact Info</h4>
             <p>Address: F5-6, 5th floor, pinnacle Business park,shanti nagar, mahakali caves road andheri east mumbai-400093
 
@@ -172,9 +225,40 @@
                     <img width="5%" height="5%" src="./images/insta.png" alt="">
             </div>
         </div>
-    <hr>
+    
     <p>© 2025 Eventra Events Management Company. All Rights Reserved.</p>
     </footer>
     
 </body>
+<script>
+const track = document.querySelector('.carousel-track');
+const images = document.querySelectorAll('.carousel-track img');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+
+let index = 0;
+const totalImages = images.length;
+const imageWidth = track.clientWidth / totalImages; 
+
+nextBtn.addEventListener('click', () => {
+    index = (index + 1) % totalImages;
+    updateCarousel();
+});
+
+prevBtn.addEventListener('click', () => {
+    index = (index - 1 + totalImages) % totalImages;
+    updateCarousel();
+});
+
+function updateCarousel() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+}
+
+
+setInterval(() => {
+    index = (index + 1) % totalImages;
+    updateCarousel();
+}, 3000);
+
+</script>
 </html>
