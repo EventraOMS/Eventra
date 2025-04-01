@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <title>Eventra - Portfolios</title>
+<style>
+        body{
+            font-family: "Outfit", serif;
+            font-optical-sizing: auto;
+            font-weight: 100px;
+            font-style: normal;
+            background-color: #60079c;
+        }
+       nav {
+            background-color:  #60079c;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: #AEEA94;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin-right: 15px;
+        }
+
+        nav a:hover {
+            font-weight: bolder; 
+            border-radius: 5px;
+        }
+        
+        p,h1,h2,h3,h4,li,a{
+            color: #AEEA94;
+        }
+
+        .portfolio-container {
+            text-align: center;
+            padding: 50px;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .portfolio-item {
+            background-color: #ffffff20;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .portfolio-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .portfolio-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        footer{
+            display: grid;
+            gap: 10px;
+            width: 200vh;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 90% 10%;
+            grid-template-rows: 1;
+    
+        }
+        footer> p{
+            grid-column: span 3;
+            text-align: center;
+        }
+</style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="./home.html"><img height="25%" width="25%" src="./images/logo.png" alt=""></a></li>
+            <a href="./About us.html"><li>About Us</li></a>
+            <a href="./services.html"><li>Services</li></a>
+            <a href="./portfolios.html"><li>Portfolios</li></a>
+            <a href="./blog.html"><li>Blog</li></a>
+            <a href="./contactus.html"><li>Contact Us</li></a>
+            <a href=""><li>User</li></a>
+        </ul>
+    </nav>
+
+    <div class="portfolio-container">
+        <h2>Our Event Portfolios</h2>
+        <p>Browse through some of our most successful and stunning events.</p>
+        
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="./images/luxury wedding.jpeg" alt="Luxury Wedding">
+                <h4>Luxury Wedding</h4>
+                <p>A grand wedding set in a royal palace with exquisite decor and flawless execution.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="./images/corporateconference.jpg" alt="Corporate Conference">
+                <h4>Corporate Conference</h4>
+                <p>A professional business summit bringing together global industry leaders.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="./images/live concert.jpg" alt="Live Concert">
+                <h4>Live Concert</h4>
+                <p>An electrifying music festival featuring international artists and stunning stage production.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="./images/themedbirthday.webp" alt="Themed Birthday Party">
+                <h4>Themed Birthday Party</h4>
+                <p>A magical celebration with custom decorations, entertainment, and delightful surprises.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="./images/exhibition.jpg" alt="Exhibition and Trade Show">
+                <h4>Exhibition & Trade Show</h4>
+                <p>An industry-leading event showcasing innovations and cutting-edge products.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="./images/sports event.jpg" alt="Sports Event">
+                <h4>Sports Event</h4>
+                <p>A thrilling sports event with world-class athletes and an enthusiastic audience.</p>
+            </div>
+        </div>
+    </div>
+<hr>
+    <footer>
+        <div>
+            <h4>Contact Info</h4>
+            <p>Address: F5-6, 5th floor, Pinnacle Business Park, Shanti Nagar, Mahakali Caves Road, Andheri East, Mumbai-400093</p>
+            <p>Email: info@cwe.in</p>
+        </div>
+        <div>
+            <h4>Company</h4>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Projects</a></li>
+                <li><a href="">Our Blog</a></li>
+                <li><a href="./services.html">Our Services</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Our Locations</h4>
+            <img src="./images/ourlocations.webp" alt="">
+            <h4>Follow Us</h4>
+            <div>
+                <img width="5%" height="5%" src="./images/Screenshot 2025-01-15 133424.png" alt="">
+                <img width="5%" height="5%" src="./images/yt.png" alt="">
+                <img width="5%" height="5%" src="./images/x.png" alt="">
+                <img width="5%" height="5%" src="./images/linkedin.png" alt="">
+                <img width="5%" height="5%" src="./images/insta.png" alt="">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
