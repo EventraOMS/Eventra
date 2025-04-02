@@ -1,131 +1,237 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="styles.css">
-    <script>
-        function validateForm(event) {
-            event.preventDefault();
-            let fname = document.getElementById("fname").value.trim();
-            let lname = document.getElementById("lname").value.trim();
-            let age = document.getElementById("age").value;
-            let phone = document.getElementById("phone").value.trim();
-            let email = document.getElementById("email").value.trim();
-            let password = document.getElementById("password").value;
-            let repassword = document.getElementById("repassword").value;
-            let address = document.getElementById("address").value.trim();
-            let gender = document.querySelector('input[name="gender"]:checked');
-            
-            let phonePattern = /^\+?[0-9]{10,15}$/;
-            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            let passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
-            if (fname === "" || lname === "" || fname === null || lname === null) {
-                alert("First and Last Name are required.");
-                return false;
+<html lang="en" ng-app="signupApp">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <script>
+            function validateForm(event) {
+                event.preventDefault();
+                let fname = document.getElementById("fname").value.trim();
+                let lname = document.getElementById("lname").value.trim();
+                let age = document.getElementById("age").value;
+                let phone = document.getElementById("phone").value.trim();
+                let email = document.getElementById("email").value.trim();
+                let password = document.getElementById("password").value;
+                let repassword = document.getElementById("repassword").value;
+                let address = document.getElementById("address").value.trim();
+                let gender = document.querySelector('input[name="gender"]:checked');
+                let phonePattern = /^\+?[0-9]{10,15}$/;
+                let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                let passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+                if (fname === "" || lname === "" || fname === null || lname === null) {
+                    alert("First and Last Name are required.");
+                    return false;
+                }
+                if (age < 18 || age > 99) {
+                    alert("Age must be between 18 and 99.");
+                    return false;
+                }
+                if (!phonePattern.test(phone)) {
+                    alert("Invalid phone number.");
+                    return false;
+                }
+                if (!gender) {
+                    alert("Please select a gender.");
+                    return false;
+                }
+                if (address === "") {
+                    alert("Address cannot be empty.");
+                    return false;
+                }
+                if (!emailPattern.test(email)) {
+                    alert("Invalid email address.");
+                    return false;
+                }
+                if (!passwordPattern.test(password)) {
+                    alert("Password must be at least 8 characters long, include an uppercase letter, a lowercase letter, a number, and a special character.");
+                    return false;
+                }
+                if (password !== repassword) {
+                    alert("Passwords do not match.");
+                    return false;
+                }
+                alert("Form submitted successfully!");
+                document.getElementById("signup-form").submit();
             }
-            if (age < 18 || age > 99) {
-                alert("Age must be between 18 and 99.");
-                return false;
+        </script>
+    </head>
+    <body ng-controller="SignupController">
+        <header>
+            <nav id="navbar">
+                <ul class="nav-list">
+                <li><a href="./home.html"><img height="25%" width="25%" src="./images/logo.png" alt=""></a></li>
+                <a href="./About us.html"><li>About Us</li></a>
+                <a href="./services.html"><li>Services</li></a>
+                <a href="./portfolios.html"><li>Portfolios</li></a>
+                <a href="./blog.html"><li>Blog</li></a>
+                <a href="./contactus.html"><li>Contact Us</li></a>
+                <a href=""><li>User</li></a>
+                </ul>
+            </nav>
+        </header>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
             }
-            if (!phonePattern.test(phone)) {
-                alert("Invalid phone number.");
-                return false;
+            #signup-section {
+                width: 50%;
+                margin: auto;
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             }
-            if (!gender) {
-                alert("Please select a gender.");
-                return false;
+            h1 {
+                text-align: center;
+                color: #333;
             }
-            if (address === "") {
-                alert("Address cannot be empty.");
-                return false;
+            #signup-form {
+                margin-top: 20px;
             }
-            if (!emailPattern.test(email)) {
-                alert("Invalid email address.");
-                return false;
+            fieldset {
+                border: 1px solid #ccc;
+                padding: 15px;
+                border-radius: 5px;
+                margin-bottom: 20px;
             }
-            if (!passwordPattern.test(password)) {
-                alert("Password must be at least 8 characters long, include an uppercase letter, a lowercase letter, a number, and a special character.");
-                return false;
+            label {
+                font-weight: bold;
+                display: block;
+                margin-top: 10px;
             }
-            if (password !== repassword) {
-                alert("Passwords do not match.");
-                return false;
+            input, textarea {
+                width: calc(100% - 22px);
+                padding: 10px;
+                margin-top: 5px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                display: block;
             }
-            alert("Form submitted successfully!");
-            document.getElementById("signup-form").submit();
-        }
-    </script>
-</head>
-<body>
-    <header>
-        <nav id="navbar">
-            <ul class="nav-list">
-            <li><a href="./home.html"><img height="25%" width="25%" src="./images/logo.png" alt=""></a></li>
-            <a href="./About us.html"><li>About Us</li></a>
-            <a href="./services.html"><li>Services</li></a>
-            <a href="./portfolios.html"><li>Portfolios</li></a>
-            <a href="./blog.html"><li>Blog</li></a>
-            <a href="./contactus.html"><li>Contact Us</li></a>
-            <a href=""><li>User</li></a>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <section id="signup-section">
-            <h1>Sign Up</h1>
-            <hr>
-            <div id="form-container">
-                <form id="signup-form" onsubmit="validateForm(event)">
-                    <fieldset class="fieldset">
+            .gender-group {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+            }
+            .gender-group input[type="radio"] {
+                margin: 0;
+                width: auto;
+            }
+            .gender-group label {
+                margin: 0;
+                display: inline;
+            }
+            .form-buttons {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 20px;
+            }
+            .form-buttons input {
+                width: 48%;
+                padding: 10px;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+                color: white;
+            }
+            .form-buttons input[type="submit"] {
+                background-color: #28a745;
+            }
+            .form-buttons input[type="reset"] {
+                background-color: #dc3545;
+            }
+            .form-buttons input:hover {
+                opacity: 0.8;
+            }
+            #footer {
+                background-color: #222;
+                color: white;
+                padding: 20px;
+                text-align: center;
+                margin-top: 20px;
+            }
+            .footer-section {
+                margin-bottom: 20px;
+            }
+            .footer-links {
+                list-style: none;
+                padding: 0;
+            }
+            .footer-links li {
+                margin: 5px 0;
+            }
+            .footer-links a {
+                color: white;
+                text-decoration: none;
+            }
+            #social-media img {
+                width: 30px;
+                height: 30px;
+                margin: 5px;
+            }
+        </style>
+        <main>
+            <section id="signup-section">
+                <h1>Sign Up</h1>
+                <hr>
+                <form id="signup-form" name="signupForm" ng-submit="submitForm()" onsubmit="validateForm(event)">
+                    <fieldset>
                         <legend>Personal Information</legend>
                         <label for="fname">First Name:</label>
-                        <input type="text" id="fname" name="fname" placeholder="John">
-                        
+                        <input type="text" id="fname" ng-model="user.fname" placeholder="John">
                         <label for="lname">Last Name:</label>
-                        <input type="text" id="lname" name="lname" placeholder="Doe">
-                        
+                        <input type="text" id="lname" ng-model="user.lname" placeholder="Doe">
                         <label for="age">Age:</label>
-                        <input type="number" id="age" name="age">
-                        
+                        <input type="number" id="age" ng-model="user.age">
                         <label for="phone">Phone Number:</label>
-                        <input type="tel" id="phone" name="phone" placeholder="+91 987654321">
-                        
+                        <input type="tel" id="phone" ng-model="user.phone" placeholder="9876543210">
                         <label>Gender:</label>
                         <div class="gender-group">
-                            <input type="radio" id="male" name="gender" value="male">
-                            <label for="male">Male</label>
-                            <input type="radio" id="female" name="gender" value="female">
-                            <label for="female">Female</label>
+                            <input type="radio" id="male" ng-model="user.gender" value="Male"> <label for="male">Male</label>
+                            <input type="radio" id="female" ng-model="user.gender" value="Female"> <label for="female">Female</label>
                         </div>
-                        
                         <label for="address">Address:</label>
-                        <textarea id="address" name="address" placeholder="Your Address goes here." rows="5"></textarea>
+                        <textarea id="address" ng-model="user.address" placeholder="Your address goes here." rows="5"></textarea>
                     </fieldset>
-                    
-                    <fieldset class="fieldset">
+                    <fieldset>
                         <legend>Account Information</legend>
-                        <label for="email">Email Address:</label>
-                        <input type="email" id="email" name="email" placeholder="abc@xyz.com">
-                        
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" ng-model="user.email" placeholder="abc@xyz.com">
                         <label for="password">Password:</label>
-                        <input type="password" id="password" name="password">
-                        
+                        <input type="password" id="password" ng-model="user.password">
                         <label for="repassword">Reconfirm Password:</label>
-                        <input type="password" id="repassword" name="repassword">
+                        <input type="password" id="repassword" ng-model="user.repassword">
                     </fieldset>
-                    
                     <div class="form-buttons">
                         <input type="submit" value="Sign Up">
-                        <input type="reset" value="Reset">
+                        <input type="reset" value="Reset" ng-click="resetForm()">
                     </div>
                 </form>
-                <p>Already a User? <a href="signin.html">Sign In</a></p>
-            </div>
-        </section>
-    </main>
-</body>
+                <hr>
+                <h2>Submitted Information:</h2>
+                <p><strong>Name:</strong> {{ user.fname }} {{ user.lname }}</p>
+                <p><strong>Age:</strong> {{ user.age }}</p>
+                <p><strong>Phone:</strong> {{ user.phone }}</p>
+                <p><strong>Gender:</strong> {{ user.gender }}</p>
+                <p><strong>Address:</strong> {{ user.address }}</p>
+                <p><strong>Email:</strong> {{ user.email }}</p>
+            </section>
+        </main>
+        <script>
+            var app = angular.module('signupApp', []);
+            app.controller('SignupController', function($scope) {
+                $scope.user = {};
+                $scope.submitForm = function() {
+                };
+                $scope.resetForm = function() {
+                    $scope.user = {};
+                };
+            });
+        </script>
+    </body>
 </html>
