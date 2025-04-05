@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Sign Up</title>
-        <link rel="stylesheet" href="styles.css">
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
         <script>
             function validateForm(event) {
@@ -18,9 +17,11 @@
                 let repassword = document.getElementById("repassword").value;
                 let address = document.getElementById("address").value.trim();
                 let gender = document.querySelector('input[name="gender"]:checked');
+                
                 let phonePattern = /^\+?[0-9]{10,15}$/;
                 let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 let passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
                 if (fname === "" || lname === "" || fname === null || lname === null) {
                     alert("First and Last Name are required.");
                     return false;
@@ -53,8 +54,51 @@
                     alert("Passwords do not match.");
                     return false;
                 }
-                alert("Form submitted successfully!");
-                document.getElementById("signup-form").submit();
+
+                // Create user object with correct field names matching server expectations
+                const userData = {
+                    fname: fname,
+                    lname: lname,
+                    age: parseInt(age),
+                    phone: phone,
+                    gender: gender.value,
+                    address: address,
+                    email: email,
+                    password: password
+                };
+
+                console.log('Sending signup request:', userData);
+
+                // Send POST request to create user
+                fetch('http://localhost:3002/api/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(userData)
+                })
+                .then(async response => {
+                    const data = await response.json();
+                    console.log('Server response:', data);
+                    
+                    if (!response.ok) {
+                        throw new Error(data.error || 'Failed to create account');
+                    }
+                    
+                    if (data.success) {
+                        alert("Account created successfully! Please log in.");
+                        window.location.href = 'index.html';
+                    } else {
+                        throw new Error(data.error || 'Failed to create account');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert(error.message || "An error occurred. Please try again.");
+                });
+
+                return false;
             }
         </script>
     </head>
@@ -192,8 +236,8 @@
                         <input type="tel" id="phone" ng-model="user.phone" placeholder="9876543210">
                         <label>Gender:</label>
                         <div class="gender-group">
-                            <input type="radio" id="male" ng-model="user.gender" value="Male"> <label for="male">Male</label>
-                            <input type="radio" id="female" ng-model="user.gender" value="Female"> <label for="female">Female</label>
+                            <input type="radio" id="male" name="gender" ng-model="user.gender" value="Male"> <label for="male">Male</label>
+                            <input type="radio" id="female" name="gender" ng-model="user.gender" value="Female"> <label for="female">Female</label>
                         </div>
                         <label for="address">Address:</label>
                         <textarea id="address" ng-model="user.address" placeholder="Your address goes here." rows="5"></textarea>

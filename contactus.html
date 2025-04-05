@@ -21,18 +21,18 @@
                 <a href="./portfolios.html"><li>Portfolios</li></a>
                 <a href="./blog.html">Blog</a>
                 <a href="./contactus.html">Contact Us</a>
-                <a href="">User</a>
+                <a href="profile.html"><li>Profile</li></a>
 
         </nav>
         <hr>
         <h1>Get in touch with us today!</h1>
     </header>
-    <center><div id="formContainer"><form action="">
+    <center><div id="formContainer"><form id="contactForm" enctype="multipart/form-data">
         <label for="queryType">Select type of mail</label><br>
         <select name="queryType" id="queryType">
-            <option value="Review">Query</option>
-            <option value="Review">Feedback</option>
-            <option value="Review">Suggestions</option>
+            <option value="Query">Query</option>
+            <option value="Feedback">Feedback</option>
+            <option value="Suggestions">Suggestions</option>
         </select>
         <br><br>
         <label for="email">Enter email ID</label> <br><input type="email" id="email"><br><br>
@@ -40,7 +40,7 @@
         <label for="subject">Enter Subject</label> <br><input type="text" id="subject" maxlength="30"><br><br>
         <label for="content">Enter Details</label> <br><textarea name="content" id="content" rows="5" cols="40"
             maxlength="500"></textarea>
-        <br><br><label for="file">Attach relevent files </label> <br><input type="file">
+        <br><br><label for="attachment">Attach relevant files </label> <br><input type="file" id="attachment" name="attachment" accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png">
         <br><br><label for="copy">Do you need a copy?</label> <br><label for="yes">Yes</label><input type="radio" name="copy" id="yes"><br><label for="no">No</label><input type="radio" name="copy" id="no">
         <br><br><input type="submit">
     </form></div></center>
@@ -83,22 +83,24 @@
     </footer>
 </body>
 <script>
-  
     window.onload = function () {
-        document.querySelector("form").onsubmit = function (event) {
+        document.getElementById("contactForm").onsubmit = async function (event) {
+            event.preventDefault();
+            
+            let queryType = document.getElementById("queryType").value;
             let email = document.getElementById("email").value;
             let subject = document.getElementById("subject").value;
             let content = document.getElementById("content").value;
             let phone = document.getElementById("phone").value;
+            let needsCopy = document.getElementById("yes").checked;
+            let attachment = document.getElementById("attachment").files[0];
 
-            
             let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
             let charRegex = /^[a-zA-Z0-9\s.,!?'"-]+$/; 
             let phoneRegex = /^[0-9]{10}$/; 
 
             let isValid = true;
 
-            
             if (!emailRegex.test(email)) {
                 alert("Invalid Email Address");
                 isValid = false;
@@ -116,16 +118,38 @@
                 isValid = false;
             }
 
-            if (!isValid) {
-                event.preventDefault(); 
-            } else {
-                alert("Form submitted successfully!");
+            if (isValid) {
+                try {
+                    const formData = new FormData();
+                    formData.append('queryType', queryType);
+                    formData.append('email', email);
+                    formData.append('phone', phone);
+                    formData.append('subject', subject);
+                    formData.append('content', content);
+                    formData.append('needsCopy', needsCopy);
+                    if (attachment) {
+                        formData.append('attachment', attachment);
+                    }
+
+                    const response = await fetch('http://localhost:3002/api/submit-contact', {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    const data = await response.json();
+                    if (data.success) {
+                        alert("Form submitted successfully!");
+                        document.getElementById("contactForm").reset();
+                    } else {
+                        alert("Error submitting form. Please try again.");
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert("Error submitting form. Please try again.");
+                }
             }
         };
     };
-
-
-
 </script>
 
 </html>
