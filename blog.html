@@ -1,138 +1,150 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Management Blog</title>
+    <title>Our Blog - Eventra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-
-<header>
     <nav>
         <ul>
-            <li><a href="./home.html"><img height="25%" width="25%" src="./images/logo.png" alt=""></a></li>
+            <li><a href="./home.html"><img height="25%" width="25%" src="./images/logo.png" alt="Eventra Logo"></a></li>
+            <a href="./home.html"><li>Home</li></a>
             <a href="./About us.html"><li>About Us</li></a>
             <a href="./services.html"><li>Services</li></a>
             <a href="./portfolios.html"><li>Portfolios</li></a>
             <a href="./blog.html"><li>Blog</li></a>
             <a href="./contactus.html"><li>Contact Us</li></a>
-            <a href=""><li>User</li></a>
-    
+            <a href="./index.html"><li>User</li></a>
+        </ul>
     </nav>
-<hr>
-    <h1 align="center">Event Management Blog</h1>
-</header>
 
-
-
-<main>
-    <section>
-        
-        <article>
-            <header>
-                <h2>5 Tips for Planning the Perfect Wedding</h2>
-                <p><small>Posted on October 10, 2023</small></p>
-            </header>
-            <figure>
-                <img src="E:\web\Eventra-main\images\wedding-planning-made-easy-refresh-article-600x400.png" width="250" height="200" alt="Wedding Planning">
-                <figcaption>Planning a wedding can be overwhelming.</figcaption>
-            </figure>
-            <p>
-                Here are five essential tips to help you create a perfect day that reflects your style and love story. 
-                From setting a budget to choosing the right venue, we cover everything you need to know.
-            </p>
-            <footer>
-                <a href="#">Read more...</a>
-            </footer>
-        </article>
-
-        <!-- Blog Post 2 -->
-        <article>
-            <header>
-                <h2>Top 10 Event Trends for 2023</h2>
-                <p><small>Posted on September 15, 2023</small></p>
-            </header>
-            <figure>
-                <img src="images/event-trends.jpg" width="250" height="200" alt="Event Trends">
-                <figcaption>Stay ahead of the curve with the latest trends in event management.</figcaption>
-            </figure>
-            <p>
-                From eco-friendly practices to innovative technology, discover what’s shaping the industry in 2023 
-                and how you can incorporate these trends into your next event.
-            </p>
-            <footer>
-                <a href="#">Read more...</a>
-            </footer>
-        </article>
-
-        <!-- Blog Post 3 -->
-        <article>
-            <header>
-                <h2>How to Choose the Right Venue for Your Event</h2>
-                <p><small>Posted on August 20, 2023</small></p>
-            </header>
-            <figure>
-                <img src="images/event-venue.jpg" width="250" height="200" alt="Event Venue">
-                <figcaption>Choosing the right venue can make or break your event.</figcaption>
-            </figure>
-            <p>
-                We offer insights into what to consider when selecting a venue, including location, capacity, 
-                and facilities, to ensure your event is a success.
-            </p>
-            <footer>
-                <a href="#">Read more...</a>
-            </footer>
-        </article>
+    <section class="hero">
+        <h1 class="section-title">Event Planning Blog</h1>
+        <p>Discover tips, trends, and inspiration for your next event</p>
     </section>
 
-    <!-- Blog Content Overview Section -->
-    <section>
-        <h3>Blog Content Overview</h3>
-        <table width="100%" border="1" cellpadding="5">
-            <thead>
-                <tr>
-                    <th>Content Title</th>
-                    <th>Posted On</th>
-                    <th>Summary</th>
-                    <th>Link</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>5 Tips for Planning the Perfect Wedding</td>
-                    <td>October 10, 2023</td>
-                    <td>Essential tips to help you plan a perfect wedding, from setting a budget to choosing a venue.</td>
-                    <td><a href="#">Read more...</a></td>
-                </tr>
-                <tr>
-                    <td>Top 10 Event Trends for 2023</td>
-                    <td>September 15, 2023</td>
-                    <td>Discover the latest trends in event management, including sustainability and cutting-edge technology.</td>
-                    <td><a href="#">Read more...</a></td>
-                </tr>
-                <tr>
-                    <td>How to Choose the Right Venue for Your Event</td>
-                    <td>August 20, 2023</td>
-                    <td>Insights into selecting the right venue based on location, capacity, and amenities.</td>
-                    <td><a href="#">Read more...</a></td>
-                </tr>
-            </tbody>
-        </table>
+    <section class="section">
+        <div class="blog-grid">
+            <article class="blog-card">
+                <img src="./images/weddingService.png" alt="Wedding Planning Tips">
+                <div class="blog-content">
+                    <h3>10 Essential Tips for Planning Your Dream Wedding</h3>
+                    <p class="blog-date">March 15, 2024</p>
+                    <p>Discover the key elements that will make your wedding day truly special and stress-free.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="./images/corporateEventService.jpg" alt="Corporate Event Trends">
+                <div class="blog-content">
+                    <h3>Top Corporate Event Trends for 2024</h3>
+                    <p class="blog-date">March 10, 2024</p>
+                    <p>Stay ahead of the curve with these innovative corporate event ideas and technologies.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="./images/birthdayService.jpg" alt="Birthday Party Ideas">
+                <div class="blog-content">
+                    <h3>Creative Birthday Party Themes for All Ages</h3>
+                    <p class="blog-date">March 5, 2024</p>
+                    <p>From kids to adults, find the perfect theme for your next birthday celebration.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="./images/themedPartyService.jpg" alt="Event Decor Tips">
+                <div class="blog-content">
+                    <h3>Transform Your Space: Event Decor Ideas</h3>
+                    <p class="blog-date">February 28, 2024</p>
+                    <p>Learn how to create stunning event spaces with these decor tips and tricks.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="./images/anniversaryService.jpg" alt="Anniversary Planning">
+                <div class="blog-content">
+                    <h3>Celebrating Milestones: Anniversary Event Planning</h3>
+                    <p class="blog-date">February 20, 2024</p>
+                    <p>Make your anniversary celebration memorable with these expert planning tips.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="./images/cateringService.webp" alt="Catering Guide">
+                <div class="blog-content">
+                    <h3>The Ultimate Guide to Event Catering</h3>
+                    <p class="blog-date">February 15, 2024</p>
+                    <p>Everything you need to know about selecting the perfect catering for your event.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="./images/live concert.jpg" alt="Entertainment Planning">
+                <div class="blog-content">
+                    <h3>Entertainment Ideas for Your Next Event</h3>
+                    <p class="blog-date">February 10, 2024</p>
+                    <p>From live music to interactive activities, discover ways to keep your guests engaged.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="./images/sports event.jpg" alt="Sports Event Planning">
+                <div class="blog-content">
+                    <h3>Planning Successful Sports Events</h3>
+                    <p class="blog-date">February 5, 2024</p>
+                    <p>Learn the essentials of organizing and executing memorable sports events.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+        </div>
     </section>
-</main>
 
-<!-- Footer Section -->
-<footer>
-    <table width="100%" border="0" cellpadding="10">
-        <tr>
-            <td align="center">
-                <p>&copy; 2023 [Your Company Name]. All rights reserved.</p>
-            </td>
-        </tr>
-    </table>
-</footer>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>Eventra</h4>
+                <p>Creating unforgettable moments through exceptional event planning and execution.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="./home.html">Home</a><br>
+                <a href="./About us.html">About Us</a><br>
+                <a href="./services.html">Services</a><br>
+                <a href="./portfolios.html">Portfolios</a><br>
+                <a href="./blog.html">Blog</a><br>
+                <a href="./contactus.html">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>Email: info@eventra.com</p>
+                <p>Phone: +1 234 567 890</p>
+                <p>Address: 123 Event Street, Celebration City</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><img src="./images/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="./images/instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="./images/twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="./images/linkedin.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
