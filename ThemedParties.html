@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .image-gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+            margin: 0 5px;
+        }
+        .footer-section img {
+            max-width: 100%;
+            height: auto;
+        }
+        nav img {
+            max-width: 150px;
+            height: auto;
+        }
+        .service-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+    <title>Themed Party Celebrations</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="./home.html"><img height="25%" width="25%" src="./images/logo.png" alt="Eventra Logo"></a></li>
+            <a href="./home.html"><li>Home</li></a>
+            <a href="./About us.html"><li>About Us</li></a>
+            <a href="./services.html"><li>Services</li></a>
+            <a href="./portfolios.html"><li>Portfolios</li></a>
+            <a href="./blog.html"><li>Blog</li></a>
+            <a href="./contactus.html"><li>Contact Us</li></a>
+            <a href="./index.html"><li>User</li></a>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1 class="section-title">Themed Party Celebrations</h1>
+        <p>Bring your unique party ideas to life with our creative themed event services</p>
+        <button onclick="window.location.href='event_form.html?type=themed'" class="book-now-btn">Book Your Themed Party</button>
+    </section>
+
+    <section class="section">
+        <div class="card">
+            <p>Transform your party into an unforgettable experience with our themed event services. From whimsical fairy tales to retro vibes, we craft immersive experiences that your guests will adore. Our team of creative experts will bring your vision to life with attention to every detail.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Our Themed Party Gallery</h2>
+        <div class="image-gallery">
+            <a href="./ThemedParties.html"><img src="./images/themedPartyService.jpg" alt="Themed Party 1"></a>
+            <a href="./ThemedParties.html"><img src="./images/themedbirthday.webp" alt="Themed Party 2"></a>
+            <a href="./ThemedParties.html"><img src="./images/event4.jpg" alt="Themed Party 3"></a>
+            <a href="./ThemedParties.html"><img src="./images/event5.avif" alt="Themed Party 4"></a>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">What We Offer</h2>
+        <div class="card">
+            <h3>Popular Themes</h3>
+            <ul>
+                <li>Hollywood Glamour</li>
+                <li>Retro Decades</li>
+                <li>Fairy Tale Fantasy</li>
+                <li>Beach Party</li>
+                <li>Masquerade Ball</li>
+                <li>Movie Night</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Additional Services</h3>
+            <ul>
+                <li>Custom Decorations</li>
+                <li>Costume Rentals</li>
+                <li>Theme-based Catering</li>
+                <li>Entertainment</li>
+                <li>Photo Booths</li>
+                <li>Special Effects</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="card">
+            <h3>Contact us for availability and pricing</h3>
+            <p>Let us help you create the perfect themed party. Contact us today to discuss your requirements and get a personalized quote.</p>
+            <button onclick="window.location.href='event_form.html?type=themed'" class="book-now-btn">Book Your Themed Party Now</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <img src="./images/logo.png" alt="Eventra Logo">
+                <p>Eventra is a leading corporate event management company operating nationally from Mumbai, Delhi, Bangalore, Gurgaon, Pune and other cities in India</p>
+                <h4>Contact Info</h4>
+                <p>Address: F5-6, 5th floor, pinnacle Business park,shanti nagar, mahakali caves road andheri east mumbai-400093</p>
+                <p>Email: info@cwe.in</p>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="./home.html">Home</a></li>
+                    <li><a href="./About us.html">About Us</a></li>
+                    <li><a href="./portfolios.html">Projects</a></li>
+                    <li><a href="./blog.html">Our Blog</a></li>
+                    <li><a href="./services.html">Our Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Our Locations</h4>
+                <img src="./images/ourlocations.webp" alt="Our Locations">
+                <h4>Follow Us on</h4>
+                <div class="social-icons">
+                    <a href="#"><img src="./images/Screenshot 2025-01-15 133424.png" alt="Social Media"></a>
+                    <a href="#"><img src="./images/yt.png" alt="YouTube"></a>
+                    <a href="#"><img src="./images/x.png" alt="Twitter"></a>
+                    <a href="#"><img src="./images/linkedin.png" alt="LinkedIn"></a>
+                    <a href="#"><img src="./images/insta.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <p>© 2025 Eventra Events Management Company. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
