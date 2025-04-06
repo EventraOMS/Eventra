@@ -3,168 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Portfolios - Eventra</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-    <title>Eventra - Portfolios</title>
-<style>
-        body{
-            font-family: "Outfit", serif;
-            font-optical-sizing: auto;
-            font-weight: 100px;
-            font-style: normal;
-            background-color: #60079c;
-        }
-       nav {
-            background-color:  #60079c;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            align-items: center;
-        }
-
-        nav a {
-            color: #AEEA94;
-            text-decoration: none;
-            padding: 10px 15px;
-            margin-right: 15px;
-        }
-
-        nav a:hover {
-            font-weight: bolder; 
-            border-radius: 5px;
-        }
-        
-        p,h1,h2,h3,h4,li,a{
-            color: #AEEA94;
-        }
-
-        .portfolio-container {
-            text-align: center;
-            padding: 50px;
-        }
-        
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            padding: 20px;
-        }
-        
-        .portfolio-item {
-            background-color: #ffffff20;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease-in-out;
-        }
-        
-        .portfolio-item:hover {
-            transform: scale(1.05);
-        }
-        
-        .portfolio-item img {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        footer{
-            display: grid;
-            gap: 10px;
-            width: 200vh;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 90% 10%;
-            grid-template-rows: 1;
-    
-        }
-        footer> p{
-            grid-column: span 3;
-            text-align: center;
-        }
-</style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="./home.html"><img height="25%" width="25%" src="./images/logo.png" alt=""></a></li>
+            <li><a href="./home.html"><img height="25%" width="25%" src="./images/logo.png" alt="Eventra Logo"></a></li>
+            <a href="./home.html"><li>Home</li></a>
             <a href="./About us.html"><li>About Us</li></a>
             <a href="./services.html"><li>Services</li></a>
             <a href="./portfolios.html"><li>Portfolios</li></a>
             <a href="./blog.html"><li>Blog</li></a>
             <a href="./contactus.html"><li>Contact Us</li></a>
-            <a href=""><li>User</li></a>
+            <a href="./index.html"><li>User</li></a>
         </ul>
     </nav>
 
-    <div class="portfolio-container">
-        <h2>Our Event Portfolios</h2>
-        <p>Browse through some of our most successful and stunning events.</p>
-        
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="./images/luxury wedding.jpeg" alt="Luxury Wedding">
-                <h4>Luxury Wedding</h4>
-                <p>A grand wedding set in a royal palace with exquisite decor and flawless execution.</p>
-            </div>
-            <div class="portfolio-item">
-                <img src="./images/corporateconference.jpg" alt="Corporate Conference">
-                <h4>Corporate Conference</h4>
-                <p>A professional business summit bringing together global industry leaders.</p>
-            </div>
-            <div class="portfolio-item">
-                <img src="./images/live concert.jpg" alt="Live Concert">
-                <h4>Live Concert</h4>
-                <p>An electrifying music festival featuring international artists and stunning stage production.</p>
-            </div>
-            <div class="portfolio-item">
-                <img src="./images/themedbirthday.webp" alt="Themed Birthday Party">
-                <h4>Themed Birthday Party</h4>
-                <p>A magical celebration with custom decorations, entertainment, and delightful surprises.</p>
-            </div>
-            <div class="portfolio-item">
-                <img src="./images/exhibition.jpg" alt="Exhibition and Trade Show">
-                <h4>Exhibition & Trade Show</h4>
-                <p>An industry-leading event showcasing innovations and cutting-edge products.</p>
-            </div>
-            <div class="portfolio-item">
-                <img src="./images/sports event.jpg" alt="Sports Event">
-                <h4>Sports Event</h4>
-                <p>A thrilling sports event with world-class athletes and an enthusiastic audience.</p>
-            </div>
+    <section class="hero">
+        <h1 class="section-title">Our Portfolios</h1>
+        <p>Explore our successful events and see how we bring celebrations to life</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Wedding Celebrations</h2>
+        <div class="image-gallery">
+            <img src="./images/wed1.webp" alt="Elegant Wedding Setup">
+            <img src="./images/wed2.jpg" alt="Wedding Reception">
+            <img src="./images/wed3.jpg" alt="Wedding Ceremony">
+            <img src="./images/wed4.jpg" alt="Wedding Decorations">
+            <img src="./images/luxury wedding.jpeg" alt="Luxury Wedding">
+            <img src="./images/weddingService.png" alt="Wedding Service">
         </div>
-    </div>
-<hr>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Birthday Parties</h2>
+        <div class="image-gallery">
+            <img src="./images/birth1.jpg" alt="Kids Birthday Party">
+            <img src="./images/birth2.jpg" alt="Adult Birthday Celebration">
+            <img src="./images/birth3.png" alt="Birthday Decorations">
+            <img src="./images/birth4.jpg" alt="Birthday Setup">
+            <img src="./images/birthdayService.jpg" alt="Birthday Service">
+            <img src="./images/themedbirthday.webp" alt="Themed Birthday">
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Corporate Events</h2>
+        <div class="image-gallery">
+            <img src="./images/corporateconference.jpg" alt="Conference Setup">
+            <img src="./images/corporateEventService.jpg" alt="Corporate Event">
+            <img src="./images/exhibition.jpg" alt="Exhibition">
+            <img src="./images/live concert.jpg" alt="Live Concert">
+            <img src="./images/sports event.jpg" alt="Sports Event">
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Themed Parties</h2>
+        <div class="image-gallery">
+            <img src="./images/themedPartyService.jpg" alt="Themed Party Service">
+            <img src="./images/event1.webp" alt="Event Setup">
+            <img src="./images/event2.webp" alt="Event Decorations">
+            <img src="./images/event3.jpg" alt="Event Celebration">
+            <img src="./images/event4.jpg" alt="Event Theme">
+            <img src="./images/event5.avif" alt="Event Design">
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Anniversary Celebrations</h2>
+        <div class="image-gallery">
+            <img src="./images/anniversaryService.jpg" alt="Anniversary Service">
+            <img src="./images/cateringService.webp" alt="Catering Service">
+            <img src="./images/ourlocations.webp" alt="Our Locations">
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Our Partners</h2>
+        <div class="partners-gallery">
+            <img src="./images/sponsor1.png" alt="Partner 1">
+            <img src="./images/sponsor2.png" alt="Partner 2">
+            <img src="./images/sponsor3.png" alt="Partner 3">
+            <img src="./images/sponsor4.png" alt="Partner 4">
+            <img src="./images/sponsor5.png" alt="Partner 5">
+        </div>
+    </section>
+
     <footer>
-        <div>
-            <h4>Contact Info</h4>
-            <p>Address: F5-6, 5th floor, Pinnacle Business Park, Shanti Nagar, Mahakali Caves Road, Andheri East, Mumbai-400093</p>
-            <p>Email: info@cwe.in</p>
-        </div>
-        <div>
-            <h4>Company</h4>
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Projects</a></li>
-                <li><a href="">Our Blog</a></li>
-                <li><a href="./services.html">Our Services</a></li>
-            </ul>
-        </div>
-        <div>
-            <h4>Our Locations</h4>
-            <img src="./images/ourlocations.webp" alt="">
-            <h4>Follow Us</h4>
-            <div>
-                <img width="5%" height="5%" src="./images/Screenshot 2025-01-15 133424.png" alt="">
-                <img width="5%" height="5%" src="./images/yt.png" alt="">
-                <img width="5%" height="5%" src="./images/x.png" alt="">
-                <img width="5%" height="5%" src="./images/linkedin.png" alt="">
-                <img width="5%" height="5%" src="./images/insta.png" alt="">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>Eventra</h4>
+                <p>Creating unforgettable moments through exceptional event planning and execution.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="./home.html">Home</a><br>
+                <a href="./About us.html">About Us</a><br>
+                <a href="./services.html">Services</a><br>
+                <a href="./portfolios.html">Portfolios</a><br>
+                <a href="./blog.html">Blog</a><br>
+                <a href="./contactus.html">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>Email: info@eventra.com</p>
+                <p>Phone: +1 234 567 890</p>
+                <p>Address: 123 Event Street, Celebration City</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><img src="./images/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="./images/instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="./images/twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="./images/linkedin.png" alt="LinkedIn"></a>
+                </div>
             </div>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
