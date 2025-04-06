@@ -3,222 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Birthday Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Internal CSS */
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff; /* White background */
-            color: #333; /* Dark text color for contrast */
-        }
-
-        h4 {
-            color: #f1f4f7; /* Primary color for headings */
-        }
-        h1 {
-            color: #121213; /* Primary color for headings */
-        }
-        h2 {
-            color: #000000; /* Primary color for headings */
-        }
-
-        p {
-            color: #555; /* Slightly lighter text color */
-        }
-
-        nav {
-            background-color: #000000; /* Navigation bar color */
-            padding: 10px 20px;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            align-items: center;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 15px;
-            margin-right: 15px;
-            transition: background 0.3s;
-        }
-
-        nav a:hover {
-            background-color: #000000; /* Darker shade on hover */
-            border-radius: 5px;
-        }
-
-        hr {
-            border: 1px solid #000000;
-            margin: 20px 0;
-        }
-
-        .center {
-            text-align: center;
-        }
-
-        .image-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 10px;
-        }
-
-        .image-gallery img {
-            width: 30%; /* Adjusts the size to fit 2 images per row */
-            height: auto;
-            object-fit: cover;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        footer {
-            background-color: #000000; /* Footer color */
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        footer div {
-            margin-bottom: 20px;
-        }
-
-        footer img {
-            margin: 5px;
-        }
-
-        #socialMediaLogos img {
-            margin: 0 5px;
-            cursor: pointer;
-        }
-
-        #socialMediaLogos img:hover {
-            opacity: 0.7; /* Slightly transparent on hover */
-        }
-
-        /* Styling for the 'What We Offer' section */
-        table {
-            width: 100%;
-            margin: 20px 0;
-            border-collapse: collapse;
-        }
-
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #000000;
-            color: white;
-        }
-
-        td {
-            background-color: #f9f9f9;
-        }
-
-        td ul {
-            padding-left: 20px;
-        }
-
-        td ul li {
-            list-style-type: disc;
-        }
-    </style>
+    <title>Birthday Events</title>
 </head>
 <body>
-    <div>
-        <nav>
-            <ul>
-            <li><a href="./home.html"><img height="25%" width="25%" src="./images/logo.png" alt=""></a></li>
+    <nav>
+        <ul>
+            <li><a href="./home.html"><img height="25%" width="25%" src="./images/logo.png" alt="Eventra Logo"></a></li>
+            <a href="./home.html"><li>Home</li></a>
             <a href="./About us.html"><li>About Us</li></a>
             <a href="./services.html"><li>Services</li></a>
             <a href="./portfolios.html"><li>Portfolios</li></a>
             <a href="./blog.html"><li>Blog</li></a>
             <a href="./contactus.html"><li>Contact Us</li></a>
-            <a href=""><li>User</li></a>
-            </ul>
-        </nav>
-    </div>
-    <div class="center">
-        <h1>Birthday Parties</h1>
-        <hr>
-        <p style="width: 90%; text-align: justify; padding-left: 5%;">Choosing our event organizing company for your birthday party means a stress-free and memorable celebration tailored to your unique style and preferences. Whether it's an intimate gathering or a grand event, we specialize in crafting personalized experiences that reflect your personality and make every moment unforgettable. From fun themes and decorations to seamless coordination of activities and entertainment, we handle all the details so you can focus on enjoying your special day. With our creativity, expertise, and attention to detail, we'll turn your birthday party into an extraordinary experience that you and your guests will cherish for years to come.</p>
-        <hr>
+            <a href="./index.html"><li>User</li></a>
+        </ul>
+    </nav>
 
-        <!-- Image Gallery -->
-        <div class="image-gallery">
-            <img src="images\birth1.jpg"alt="Birthday Image">
-            <img src="images\birth2.jpg" alt="Birthday Image">
-            <img src="images/birth3.png" alt="Birthday Image">
-            <img src="images\birth4.jpg" alt="Birthday Image" style="padding-left: 35%;">
+    <section class="hero">
+        <h1 class="section-title">Birthday Celebrations</h1>
+    </section>
+
+    <section class="section">
+        <div class="card">
+            <h3>Contact us for availability and pricing</h3>
+            <p>Let us help you create the perfect birthday celebration. Contact us today to discuss your requirements and get a personalized quote.</p>
+            <button onclick="window.location.href='event_form.html?type=birthday'" class="book-now-btn">Book Your Birthday Party Now</button>
         </div>
+    </section>
 
-        <hr>
+    <section class="section">
+        <div class="card">
+            <p>From themed decorations to entertainment and catering, we handle every detail to create a celebration that reflects your personality and style. Whether it's a milestone birthday or an intimate gathering, we ensure your event is filled with joy, laughter, and cherished memories.</p>
+        </div>
+    </section>
 
-        <!-- 'What We Offer' Section - Table Layout -->
-        <h2>What We Offer</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Package</th>
-                    <th>Services</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Children's Birthday Party</td>
-                    <td>
-                        <ul>
-                            <li>DJ</li>
-                            <li>Games</li>
-                            <li>Tattoo Artist</li>
-                            <li>Balloon Decor</li>
-                            <li>Mascots</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Adult Birthday Party</td>
-                    <td>
-                        <ul>
-                            <li>Catering</li>
-                            <li>Photographer</li>
-                            <li>Venue</li>
-                            <li>Decorator</li>
-                        </ul>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <section class="section">
+        <h2 class="section-title">Our Birthday Gallery</h2>
+        <div class="image-gallery">
+            <img src="images/birth1.jpg" alt="Birthday Celebration 1">
+            <img src="images/birth2.jpg" alt="Birthday Celebration 2">
+            <img src="images/birth3.png" alt="Birthday Celebration 3">
+            <img src="images/birth4.jpg" alt="Birthday Celebration 4">
+        </div>
+    </section>
 
-        <hr>
-    </div>
+    <section class="section">
+        <h2 class="section-title">What We Offer</h2>
+        <div class="card">
+            <h3>Children's Birthday Party</h3>
+            <ul>
+                <li>DJ</li>
+                <li>Games</li>
+                <li>Tattoo Artist</li>
+                <li>Balloon Decor</li>
+                <li>Mascots</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Adult Birthday Party</h3>
+            <ul>
+                <li>Catering</li>
+                <li>Photographer</li>
+                <li>Venue</li>
+                <li>Decorator</li>
+            </ul>
+        </div>
+    </section>
 
     <footer>
-        <div>
-            <p>Craftworld Events is a leading corporate event management company operating nationally from Mumbai, Delhi, Bangalore, Gurgaon, Pune, and other cities in India.</p>
-            <h4>Contact Info</h4>
-            <p>Address: F5-6, 5th floor, Pinnacle Business Park, Shanti Nagar, Mahakali Caves Road, Andheri East, Mumbai-400093<br>
-            Email: info@cwe.in</p>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <img src="" alt="Eventra Logo">
+                <p>Eventra is a leading corporate event management company operating nationally from Mumbai, Delhi, Bangalore, Gurgaon, Pune and other cities in India</p>
+                <h4>Contact Info</h4>
+                <p>Address: F5-6, 5th floor, pinnacle Business park,shanti nagar, mahakali caves road andheri east mumbai-400093</p>
+                <p>Email: info@cwe.in</p>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="./home.html">Home</a></li>
+                    <li><a href="./About us.html">About Us</a></li>
+                    <li><a href="./portfolios.html">Projects</a></li>
+                    <li><a href="./blog.html">Our Blog</a></li>
+                    <li><a href="./services.html">Our Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Our Locations</h4>
+                <img src="./images/ourlocations.webp" alt="Our Locations">
+                <h4>Follow Us on</h4>
+                <div class="social-icons">
+                    <img src="./images/Screenshot 2025-01-15 133424.png" alt="Social Media">
+                    <img src="./images/yt.png" alt="YouTube">
+                    <img src="./images/x.png" alt="Twitter">
+                    <img src="./images/linkedin.png" alt="LinkedIn">
+                    <img src="./images/insta.png" alt="Instagram">
+                </div>
+            </div>
         </div>
-        <div>
-            <h4>Company</h4>
-        </div>
+        <p>© 2025 Eventra Events Management Company. All Rights Reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
