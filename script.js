@@ -96,4 +96,18 @@ window.addEventListener('scroll', () => {
 // Add loading animation
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
+});
+
+// Update User link in navigation
+function updateUserLink() {
+    const userLinks = document.querySelectorAll('nav a[href="./index.html"]');
+    userLinks.forEach(link => {
+        link.href = './profile.html';
+    });
+}
+
+// Call the function when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    updateUserLink();
+    // ... existing code ...
 }); 
