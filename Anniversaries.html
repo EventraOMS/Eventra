@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .image-gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+            margin: 0 5px;
+        }
+        .footer-section img {
+            max-width: 100%;
+            height: auto;
+        }
+        nav img {
+            max-width: 150px;
+            height: auto;
+        }
+        .service-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+    <title>Anniversary Celebrations</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="./home.html"><img height="25%" width="25%" src="./images/logo.png" alt="Eventra Logo"></a></li>
+            <a href="./home.html"><li>Home</li></a>
+            <a href="./About us.html"><li>About Us</li></a>
+            <a href="./services.html"><li>Services</li></a>
+            <a href="./portfolios.html"><li>Portfolios</li></a>
+            <a href="./blog.html"><li>Blog</li></a>
+            <a href="./contactus.html"><li>Contact Us</li></a>
+            <a href="./index.html"><li>User</li></a>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1 class="section-title">Anniversary Celebrations</h1>
+        <p>Celebrate your love story with a memorable anniversary celebration</p>
+        <button onclick="window.location.href='event_form.html?type=anniversary'" class="book-now-btn">Book Your Anniversary Celebration</button>
+    </section>
+
+    <section class="section">
+        <div class="card">
+            <p>Anniversaries are special milestones that deserve to be celebrated in style. Our expert team specializes in creating unforgettable anniversary celebrations that reflect your unique love story. From intimate dinners to grand celebrations, we handle every detail to make your special day perfect.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Our Anniversary Gallery</h2>
+        <div class="image-gallery">
+            <a href="./Anniversaries.html"><img src="./images/anniversaryService.jpg" alt="Anniversary Celebration 1"></a>
+            <a href="./Anniversaries.html"><img src="./images/event1.webp" alt="Anniversary Celebration 2"></a>
+            <a href="./Anniversaries.html"><img src="./images/event2.webp" alt="Anniversary Celebration 3"></a>
+            <a href="./Anniversaries.html"><img src="./images/event3.jpg" alt="Anniversary Celebration 4"></a>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">What We Offer</h2>
+        <div class="card">
+            <h3>Anniversary Packages</h3>
+            <ul>
+                <li>Intimate Dinner Celebrations</li>
+                <li>Family Gatherings</li>
+                <li>Grand Anniversary Parties</li>
+                <li>Renewal of Vows Ceremonies</li>
+                <li>Destination Celebrations</li>
+                <li>Theme-based Parties</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Additional Services</h3>
+            <ul>
+                <li>Venue Selection</li>
+                <li>Catering Services</li>
+                <li>Decor and Lighting</li>
+                <li>Photography and Videography</li>
+                <li>Entertainment</li>
+                <li>Customized Invitations</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="card">
+            <h3>Contact us for availability and pricing</h3>
+            <p>Let us help you create the perfect anniversary celebration. Contact us today to discuss your requirements and get a personalized quote.</p>
+            <button onclick="window.location.href='event_form.html?type=anniversary'" class="book-now-btn">Book Your Anniversary Celebration Now</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <img src="./images/logo.png" alt="Eventra Logo">
+                <p>Eventra is a leading corporate event management company operating nationally from Mumbai, Delhi, Bangalore, Gurgaon, Pune and other cities in India</p>
+                <h4>Contact Info</h4>
+                <p>Address: F5-6, 5th floor, pinnacle Business park,shanti nagar, mahakali caves road andheri east mumbai-400093</p>
+                <p>Email: info@cwe.in</p>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="./home.html">Home</a></li>
+                    <li><a href="./About us.html">About Us</a></li>
+                    <li><a href="./portfolios.html">Projects</a></li>
+                    <li><a href="./blog.html">Our Blog</a></li>
+                    <li><a href="./services.html">Our Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Our Locations</h4>
+                <img src="./images/ourlocations.webp" alt="Our Locations">
+                <h4>Follow Us on</h4>
+                <div class="social-icons">
+                    <a href="#"><img src="./images/Screenshot 2025-01-15 133424.png" alt="Social Media"></a>
+                    <a href="#"><img src="./images/yt.png" alt="YouTube"></a>
+                    <a href="#"><img src="./images/x.png" alt="Twitter"></a>
+                    <a href="#"><img src="./images/linkedin.png" alt="LinkedIn"></a>
+                    <a href="#"><img src="./images/insta.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+        <p>© 2025 Eventra Events Management Company. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
