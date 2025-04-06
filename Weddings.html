@@ -3,92 +3,159 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Wedding Page</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <style>
+            .image-gallery {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+                padding: 20px;
+            }
+            .image-gallery img {
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+                border-radius: 8px;
+                transition: transform 0.3s ease;
+            }
+            .image-gallery img:hover {
+                transform: scale(1.05);
+            }
+            .social-icons img {
+                width: 30px;
+                height: 30px;
+                margin: 0 5px;
+            }
+            .footer-section img {
+                max-width: 100%;
+                height: auto;
+            }
+            nav img {
+                max-width: 150px;
+                height: auto;
+            }
+            .service-image {
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+                border-radius: 8px;
+                margin: 20px 0;
+            }
+        </style>
+        <title>Wedding Events</title>
     </head>
     <body>
-        <div>
-            <nav>
-                <ul>
-                    <li><a href="./home.html"><img height="25%" width="25%" src="./images/logo.png" alt=""></a></li>
-                    <a href="./About us.html"><li>About Us</li></a>
-                    <a href="./services.html"><li>Services</li></a>
-                    <a href="./portfolios.html"><li>Portfolios</li></a>
-                    <a href="./blog.html"><li>Blog</li></a>
-                    <a href="./contactus.html"><li>Contact Us</li></a>
-                    <a href=""><li>User</li></a>
-                </ul>
-            </nav>
-        </div>
-        <center><h1>Weddings</h1></center>
-        <hr>
-        <center><p style="width: 90%; text-align: justify;">Choosing our event organizing company for your wedding means entrusting your special day to a team dedicated to perfection and personalization. We understand that every couple is unique, and we work closely with you to bring your vision to life, down to the smallest detail. From selecting the ideal venue to curating the perfect decor, and coordinating every moment with precision, we ensure that your wedding is a seamless and unforgettable celebration. With our experience, creativity, and passion for creating beautiful experiences, you can relax and enjoy your big day while we handle the planning and logistics. Let us turn your dream wedding into a reality, leaving you with cherished memories to last a lifetime.</p></center>
-        <hr>
-        <center><div>
-            <img src="wed1.webp" alt="Wedding Image" style="width: 45%;">
-            <img src="wed2.jpg" alt="Wedding Image" style="width: 45%;">
-            <img src="wed3.jpg" alt="Wedding Image" style="width: 45%;">
-            <img src="wed4.jpg" alt="Wedding Image" Style="width: 45%;">
-        </div></center>
-        <hr>
-        <center><h2>What we offer</h2></center>
-        <ul>
-            <li>Indian Wedding</li>
+        <nav>
             <ul>
-                <li>Hindu</li>
-                <li>Muslim</li>
-                <li>Bengali</li>
-                <li>Rajasthani</li>
-                <li>South Indian</li>
-                <li>Gujrati</li>
+                <li><a href="./home.html"><img height="25%" width="25%" src="./images/logo.png" alt="Eventra Logo"></a></li>
+                <a href="./home.html"><li>Home</li></a>
+                <a href="./About us.html"><li>About Us</li></a>
+                <a href="./services.html"><li>Services</li></a>
+                <a href="./portfolios.html"><li>Portfolios</li></a>
+                <a href="./blog.html"><li>Blog</li></a>
+                <a href="./contactus.html"><li>Contact Us</li></a>
+                <a href="./index.html"><li>User</li></a>
             </ul>
-            <li>Western Wedding</li>
-            <li>Destination Wedding</li>
-            <li>Catering Service</li>
-            <li>Marriage Halls</li>
-            <li>Horse for groom</li>
-            <li>Card Printing</li>
-            <li>Photographer</li>
-            <li>Makeup Artist</li>
-            <li>Priest</li>
-            <li>Decorator</li>
-            <hr>
-            <h3>Contact us for availability and pricing</h3>
-            <h2>&ltInsert contact information here&gt</h2>
-            <hr>
-        </ul>
-        <hr>
-        <footer>
-            <div>
-                <img src="" alt="">
-                <p>Craftworld Events is a leading corporate event management company operating nationally from Mumbai, Delhi, Bangalore, Gurgaon, Pune and other cities in India</p>
-                <h4>Contact Info</h4>
-                <p>Address: F5-6, 5th floor, pinnacle Business park,shanti nagar, mahakali caves road andheri east mumbai-400093
-    
-                    Email: info@cwe.in</p>
+        </nav>
+
+        <section class="hero">
+            <h1 class="section-title">Wedding Celebrations</h1>
+        </section>
+
+        <section class="section">
+            <div class="card">
+                <p>Choosing our event organizing company for your wedding means entrusting your special day to a team dedicated to perfection and personalization. We understand that every couple is unique, and we work closely with you to bring your vision to life, down to the smallest detail. From selecting the ideal venue to curating the perfect decor, and coordinating every moment with precision, we ensure that your wedding is a seamless and unforgettable celebration.</p>
             </div>
-            <div>
-                <h4>Company</h4>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Our Wedding Gallery</h2>
+            <div class="image-gallery">
+                <a href="./Weddings.html"><img src="./images/wed1.webp" alt="Wedding Celebration 1"></a>
+                <a href="./Weddings.html"><img src="./images/wed2.jpg" alt="Wedding Celebration 2"></a>
+                <a href="./Weddings.html"><img src="./images/wed3.jpg" alt="Wedding Celebration 3"></a>
+                <a href="./Weddings.html"><img src="./images/wed4.jpg" alt="Wedding Celebration 4"></a>
+                <a href="./Weddings.html"><img src="./images/luxury wedding.jpeg" alt="Luxury Wedding"></a>
+                <a href="./Weddings.html"><img src="./images/weddingService.png" alt="Wedding Service"></a>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">What We Offer</h2>
+            <div class="card">
+                <h3>Indian Wedding</h3>
                 <ul>
-                    <li><a href="./home.html">Home</a></li>
-                    <li><a href="./About us.html">About Us</a></li>
-                    <li><a href="./portfolios.html">Projects</a></li>
-                    <li><a href="./blog.html">Our Blog</a></li>
+                    <li>Hindu</li>
+                    <li>Muslim</li>
+                    <li>Bengali</li>
+                    <li>Rajasthani</li>
+                    <li>South Indian</li>
+                    <li>Gujrati</li>
                 </ul>
             </div>
-            <div>
-                <h4>Our Location</h4>
-                <img src="ourlocations.webp" alt="">
-                <h4>Folow Us on</h4>
-                <div id="socialMediaLogos">
-                        <img width="5%" height="5%" src="./images/Screenshot 2025-01-15 133424.png" alt="">
-                        <img width="5%" height="5%" src="./images/yt.png" alt="">
-                        <img width="5%" height="5%" src="./images/x.png" alt="">
-                        <img width="5%" height="5%" src="./images/linkedin.png" alt="">
-                        <img width="5%" height="5%" src="./images/insta.png" alt="">
+            <div class="card">
+                <h3>Additional Services</h3>
+                <ul>
+                    <li>Western Wedding</li>
+                    <li>Destination Wedding</li>
+                    <li>Catering Service</li>
+                    <li>Marriage Halls</li>
+                    <li>Horse for groom</li>
+                    <li>Card Printing</li>
+                    <li>Photographer</li>
+                    <li>Makeup Artist</li>
+                    <li>Priest</li>
+                    <li>Decorator</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="card">
+                <h3>Contact us for availability and pricing</h3>
+                <p>Let us help you create the wedding of your dreams. Contact us today to discuss your requirements and get a personalized quote.</p>
+                <button onclick="window.location.href='event_form.html?type=wedding'" class="book-now-btn">Book Your Wedding Now</button>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <img src="./images/logo.png" alt="Eventra Logo">
+                    <p>Eventra is a leading corporate event management company operating nationally from Mumbai, Delhi, Bangalore, Gurgaon, Pune and other cities in India</p>
+                    <h4>Contact Info</h4>
+                    <p>Address: F5-6, 5th floor, pinnacle Business park,shanti nagar, mahakali caves road andheri east mumbai-400093</p>
+                    <p>Email: info@cwe.in</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="./home.html">Home</a></li>
+                        <li><a href="./About us.html">About Us</a></li>
+                        <li><a href="./portfolios.html">Projects</a></li>
+                        <li><a href="./blog.html">Our Blog</a></li>
+                        <li><a href="./services.html">Our Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Our Locations</h4>
+                    <img src="./images/ourlocations.webp" alt="Our Locations">
+                    <h4>Follow Us on</h4>
+                    <div class="social-icons">
+                        <a href="#"><img src="./images/Screenshot 2025-01-15 133424.png" alt="Social Media"></a>
+                        <a href="#"><img src="./images/yt.png" alt="YouTube"></a>
+                        <a href="#"><img src="./images/x.png" alt="Twitter"></a>
+                        <a href="#"><img src="./images/linkedin.png" alt="LinkedIn"></a>
+                        <a href="#"><img src="./images/insta.png" alt="Instagram"></a>
+                    </div>
                 </div>
             </div>
-            <hr>
-        <p>© 2025 Eventra Events Management Company. All Rights Reserved.</p>
-        </footer>    
+            <p>© 2025 Eventra Events Management Company. All Rights Reserved.</p>
+        </footer>
+
+        <script src="script.js"></script>
     </body>
 </html>
