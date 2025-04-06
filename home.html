@@ -6,259 +6,268 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Eventra Event Management</title>
-<style>
-        body{
-            font-family: "Outfit", serif;
-            font-optical-sizing: auto;
-            font-weight: 100px;
-            font-style: normal;
+    <style>
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
         }
-       nav {
-            background-color:  #60079c;
-            
+        .image-gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
         }
-
-        nav ul {
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+            margin: 0 5px;
+        }
+        .footer-section img {
+            max-width: 100%;
+            height: auto;
+        }
+        nav img {
+            max-width: 150px;
+            height: auto;
+        }
+        .service-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .stats-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .testimonial-image {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 auto;
+            display: block;
+        }
+        .sponsor-image {
+            width: 150px;
+            height: 100px;
+            object-fit: contain;
+            margin: 0 auto;
+            display: block;
+        }
+        .carousel {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+        .carousel-track {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 0;
+        }
+        .carousel-track img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .nav-btn {
+            display: none;
+        }
+        /* Text alignment styles */
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .card {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: justify;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            text-align: center;
+        }
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .testimonial-card {
+            text-align: center;
+            padding: 20px;
+        }
+        .author {
+            font-style: italic;
+            margin-top: 10px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-section {
+            text-align: left;
+        }
+        .footer-section ul {
             list-style: none;
             padding: 0;
-            display: flex;
-            align-items: center;
         }
-
-        nav a {
-            color: #AEEA94;
-            text-decoration: none;
-            padding: 10px 15px;
-            margin-right: 15px;
-            
+        .footer-section ul li {
+            margin: 10px 0;
         }
-        footer{
-            display: grid;
-            gap: 10px;
-            width: 200vh;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 90% 10%;
-            grid-template-rows: 1;
-    
-        }
-        footer> p{
-            grid-column: span 3;
-            text-align: center;
-        }
-                
-        nav a:hover {
-            font-weight: bolder; 
-            border-radius: 5px;
-        }
-        p,h1,h2,h3,h4,li,a{
-            color: #AEEA94;
-        }
-        .griddivs{
-            grid-column: span 1;
-        }
-        #sponsors{
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-        }
-        #sponsors h3{
-            text-align: center;
-            grid-column: span 5;
-        }
-        #stats{
-            display: flex;
-            justify-content: center;
-            gap: 20%;
-        }
-        #testimonies{
-            display: flex;
-            justify-content: center;
-        }
-        #testimonies div{
-            text-align: center;
-        }
-        
-        .carousel {
-    position: relative;
-    width: 80%; 
-    max-width: 800px;
-    margin: auto;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.carousel-container {
-    width: 100%;
-    overflow: hidden;
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 100%;
-}
-
-.carousel-track img {
-    width: 100%;
-    flex: 0 0 100%;
-    object-fit: cover;
-}
-
-.nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 24px;
-    z-index: 10;
-}
-
-#prev { left: 10px; }
-#next { right: 10px; }
-
-
-
-</style>
+    </style>
 </head>
-<body style=" background-color: #60079c;">
-
-        <nav>
-            <ul>
-            <li><a href="./home.html"><img height="25%" width="25%" src="./images/logo.png" alt=""></a></li>
+<body>
+    <nav>
+        <ul>
+            <li><a href="./home.html"><img height="25%" width="25%" src="./images/logo.png" alt="Eventra Logo"></a></li>
+            <a href="./home.html"><li>Home</li></a>
             <a href="./About us.html"><li>About Us</li></a>
             <a href="./services.html"><li>Services</li></a>
             <a href="./portfolios.html"><li>Portfolios</li></a>
             <a href="./blog.html"><li>Blog</li></a>
             <a href="./contactus.html"><li>Contact Us</li></a>
-            <a href=""><li>User</li></a>
-            </ul>
-        </nav>
+            <a href="./index.html"><li>User</li></a>
+        </ul>
+    </nav>
 
-    <hr>
-  
-    <div class="carousel">
-        <button id="prev" class="nav-btn">‹</button>
-        <div class="carousel-track">
-            <img width="25%" height="25%" src="./images/event1.webp" alt="">
-            <img width="25%" height="25%" src="./images/event2.webp" alt="">
-            <img width="25%" height="25%" src="./images/event4.jpg" alt="">
-            <img width="25%" height="25%" src="./images/event5.avif" alt="">
-            <img width="25%" height="25%" src="/images/event3.jpg" alt="">
-        </div>
-        <button id="next" class="nav-btn">›</button>
-    </div>
-    <hr>
-    <div id="article">
-        <h2>Event Management Company in Mumbai - Trusted by Over 200+ Brand</h2>
-        <p>We are nationally recognized event planning & organising company based in Mumbai. We started with a purpose to provide one stop solutions for all your Event-related worries. Craftworld Events company specialize in corporate events management, BTL activation. we also highly recommended for conference event organizing and exhibition stall designing. This is the best Event Management Agency in Mumbai, you will find, period. We’ve always prided ourselves on being more than just event orgainser firm. We proudly present STAGE WORLD, a complete production house having all the experience & capabilities of producing & managing exhibition & events. The in-house staging unit, fabrication & designing workshop, audio visual equipment & basic sound is our biggest asset to provide the state of the art equipment, technical staff and experienced event support around the world.</p>
-        <img src="" alt="">
-        <button>Read More</button>
-    </div>
-    <hr>
-    <div id="sponsors">
-        <h3>Our Partners</h3>
-        <img src="./images/sponsor1.png" alt="">
-        <img src="./images/sponsor2.png" alt="">
-        <img src="./images/sponsor3.png" alt="">
-        <img src="./images/sponsor4.png" alt="">
-        <img src="./images/sponsor5.png" alt="">
-    </div>
-    <hr>
-    <div id="stats">
-    
-            <h4>200+ clients</h4>
-            <h4>2000+ events</h4>
-            <h4>500+ referrals</h4>
-        
-    </div>
-    <hr>
-    <div id="testimonies">
-        <div class="testimony">
-           <h4>"The team made our dream wedding come true! From the stunning décor to seamless coordination, every detail was handled with care. Our guests couldn't stop raving about how beautiful everything was. Highly recommend their services!"</h4>
-           <p>Sarah & Daniel M.</p>
-        </div>
-        <div class="testimony">
-            <h4>"We hired this company for our annual corporate gala, and they exceeded all expectations. The professionalism and attention to detail were unparalleled. The event ran smoothly, and our clients were thoroughly impressed. We'll definitely be working with them again!"</h4>
-            <p> Mark T., CEO of TechVision Inc.</p>
-         </div>
-         <div class="testimony">
-            <h4>"My daughter’s 10th birthday party was magical! The themed decorations, engaging activities, and amazing cake left everyone in awe. Thank you for creating unforgettable memories for our family."</h4>
-            <p>Linda P.</p>
-         </div>
-    </div>
-    <hr>
-    <footer>
-        <div class="griddivs">
-            <img src="" alt="">
-            <p>Eventra is a leading corporate event management company operating nationally from Mumbai, Delhi, Bangalore, Gurgaon, Pune and other cities in India</p>
-            <h4>Contact Info</h4>
-            <p>Address: F5-6, 5th floor, pinnacle Business park,shanti nagar, mahakali caves road andheri east mumbai-400093
+    <section class="hero">
+        <h1 class="section-title">Welcome to Eventra</h1>
+        <p>Your one-stop solution for all event management needs</p>
+    </section>
 
-
-                Email: info@cwe.in</p>
-        </div>
-        <div class="griddivs">
-            <h4>Company</h4>
-            <ul>
-                <li><a href="./home.html">Home</a></li>
-                <li><a href="./About us.html">About Us</a></li>
-                <li><a href="./portfolios.html">Projects</a></li>
-                <li><a href="./blog.html">Our Blog</a></li>
-                <li><a href="./services.html">Our Services</a></li>
-            </ul>
-        </div>
-        <div class="griddivs">
-            <h4>Our Locations</h4>
-            <img src="./images/ourlocations.webp" alt="">
-            <h4>Folow Us on</h4>
-            <div id="socialMediaLogos">
-                    <img width="5%" height="5%" src="./images/Screenshot 2025-01-15 133424.png" alt="">
-                    <img width="5%" height="5%" src="./images/yt.png" alt="">
-                    <img width="5%" height="5%" src="./images/x.png" alt="">
-                    <img width="5%" height="5%" src="./images/linkedin.png" alt="">
-                    <img width="5%" height="5%" src="./images/insta.png" alt="">
+    <section class="section">
+        <div class="carousel">
+            <div class="carousel-track">
+                <img src="./images/event1.webp" alt="Event 1">
+                <img src="./images/event2.webp" alt="Event 2">
+                <img src="./images/event4.jpg" alt="Event 3">
+                <img src="./images/event5.avif" alt="Event 4">
+                <img src="./images/event3.jpg" alt="Event 5">
             </div>
         </div>
-    
-    <p>© 2025 Eventra Events Management Company. All Rights Reserved.</p>
+    </section>
+
+    <section class="section">
+        <div class="card">
+            <h2>Event Management Company in Mumbai - Trusted by Over 200+ Brands</h2>
+            <p>We are nationally recognized event planning & organising company based in Mumbai. We started with a purpose to provide one stop solutions for all your Event-related worries. Craftworld Events company specialize in corporate events management, BTL activation. we also highly recommended for conference event organizing and exhibition stall designing. This is the best Event Management Agency in Mumbai, you will find, period. We've always prided ourselves on being more than just event orgainser firm. We proudly present STAGE WORLD, a complete production house having all the experience & capabilities of producing & managing exhibition & events. The in-house staging unit, fabrication & designing workshop, audio visual equipment & basic sound is our biggest asset to provide the state of the art equipment, technical staff and experienced event support around the world.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Our Partners</h2>
+        <div class="image-gallery">
+            <img src="./images/sponsor1.png" alt="Sponsor 1">
+            <img src="./images/sponsor2.png" alt="Sponsor 2">
+            <img src="./images/sponsor3.png" alt="Sponsor 3">
+            <img src="./images/sponsor4.png" alt="Sponsor 4">
+            <img src="./images/sponsor5.png" alt="Sponsor 5">
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="stats">
+            <div class="card">
+                <h3>200+ clients</h3>
+            </div>
+            <div class="card">
+                <h3>2000+ events</h3>
+            </div>
+            <div class="card">
+                <h3>500+ referrals</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Testimonials</h2>
+        <div class="testimonials">
+            <div class="testimonial-card">
+                <p>"The team made our dream wedding come true! From the stunning décor to seamless coordination, every detail was handled with care. Our guests couldn't stop raving about how beautiful everything was. Highly recommend their services!"</p>
+                <p class="author">Sarah & Daniel M.</p>
+            </div>
+            <div class="testimonial-card">
+                <p>"We hired this company for our annual corporate gala, and they exceeded all expectations. The professionalism and attention to detail were unparalleled. The event ran smoothly, and our clients were thoroughly impressed. We'll definitely be working with them again!"</p>
+                <p class="author">Mark T., CEO of TechVision Inc.</p>
+            </div>
+            <div class="testimonial-card">
+                <p>"My daughter's 10th birthday party was magical! The themed decorations, engaging activities, and amazing cake left everyone in awe. Thank you for creating unforgettable memories for our family."</p>
+                <p class="author">Linda P.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <img src="" alt="Eventra Logo">
+                <p>Eventra is a leading corporate event management company operating nationally from Mumbai, Delhi, Bangalore, Gurgaon, Pune and other cities in India</p>
+                <h4>Contact Info</h4>
+                <p>Address: F5-6, 5th floor, pinnacle Business park,shanti nagar, mahakali caves road andheri east mumbai-400093</p>
+                <p>Email: info@cwe.in</p>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="./home.html">Home</a></li>
+                    <li><a href="./About us.html">About Us</a></li>
+                    <li><a href="./portfolios.html">Projects</a></li>
+                    <li><a href="./blog.html">Our Blog</a></li>
+                    <li><a href="./services.html">Our Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Our Locations</h4>
+                <img src="./images/ourlocations.webp" alt="Our Locations">
+                <h4>Follow Us on</h4>
+                <div class="social-icons">
+                    <img src="./images/Screenshot 2025-01-15 133424.png" alt="Social Media">
+                    <img src="./images/yt.png" alt="YouTube">
+                    <img src="./images/x.png" alt="Twitter">
+                    <img src="./images/linkedin.png" alt="LinkedIn">
+                    <img src="./images/insta.png" alt="Instagram">
+                </div>
+            </div>
+        </div>
+        <p>© 2025 Eventra Events Management Company. All Rights Reserved.</p>
     </footer>
-    
+
+    <script src="script.js"></script>
+    <script>
+        // Remove carousel functionality
+    </script>
 </body>
-<script>
-const track = document.querySelector('.carousel-track');
-const images = document.querySelectorAll('.carousel-track img');
-const prevBtn = document.getElementById('prev');
-const nextBtn = document.getElementById('next');
-
-let index = 0;
-const totalImages = images.length;
-const imageWidth = track.clientWidth / totalImages; 
-
-nextBtn.addEventListener('click', () => {
-    index = (index + 1) % totalImages;
-    updateCarousel();
-});
-
-prevBtn.addEventListener('click', () => {
-    index = (index - 1 + totalImages) % totalImages;
-    updateCarousel();
-});
-
-function updateCarousel() {
-    track.style.transform = `translateX(-${index * 100}%)`;
-}
-
-
-setInterval(() => {
-    index = (index + 1) % totalImages;
-    updateCarousel();
-}, 3000);
-
-</script>
 </html>
