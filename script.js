@@ -24,23 +24,7 @@ document.querySelectorAll('.section, .card, .testimonial-card').forEach(el => {
 });
 
 // Image gallery lightbox
-document.querySelectorAll('.image-gallery img').forEach(img => {
-    img.addEventListener('click', function() {
-        const lightbox = document.createElement('div');
-        lightbox.className = 'lightbox';
-        lightbox.innerHTML = `
-            <div class="lightbox-content">
-                <img src="${this.src}" alt="${this.alt}">
-                <button class="close-lightbox">&times;</button>
-            </div>
-        `;
-        document.body.appendChild(lightbox);
-        
-        lightbox.querySelector('.close-lightbox').addEventListener('click', () => {
-            lightbox.remove();
-        });
-    });
-});
+
 
 // Form validation
 const forms = document.querySelectorAll('form');
@@ -59,7 +43,7 @@ forms.forEach(form => {
         });
         
         if (isValid) {
-            // Here you would typically send the form data to a server
+            //send the form data to a server
             console.log('Form submitted successfully');
             form.reset();
             alert('Thank you for your submission! We will contact you shortly.');
