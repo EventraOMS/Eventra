@@ -123,21 +123,6 @@
         <h1>Event Booking Form</h1>
         <form id="eventForm">
             <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-
-            <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" required>
-            </div>
-
-            <div class="form-group">
                 <label for="eventType">Event Type</label>
                 <select id="eventType" name="eventType" required>
                     <option value="">Select Event Type</option>
@@ -174,19 +159,19 @@
                 <label>Services Required</label>
                 <div class="checkbox-group">
                     <div class="checkbox-item">
-                        <input type="checkbox" id="catering" name="services" value="catering">
+                        <input type="checkbox" id="catering" name="services[]" value="catering">
                         <label for="catering">Catering</label>
                     </div>
                     <div class="checkbox-item">
-                        <input type="checkbox" id="decoration" name="services" value="decoration">
+                        <input type="checkbox" id="decoration" name="services[]" value="decoration">
                         <label for="decoration">Decoration</label>
                     </div>
                     <div class="checkbox-item">
-                        <input type="checkbox" id="photography" name="services" value="photography">
+                        <input type="checkbox" id="photography" name="services[]" value="photography">
                         <label for="photography">Photography</label>
                     </div>
                     <div class="checkbox-item">
-                        <input type="checkbox" id="venue" name="services" value="venue">
+                        <input type="checkbox" id="venue" name="services[]" value="venue">
                         <label for="venue">Venue</label>
                     </div>
                 </div>
@@ -256,7 +241,7 @@
                     }
 
                     // Get all checked services
-                    const selectedServices = Array.from(document.querySelectorAll('input[name="services"]:checked'))
+                    const selectedServices = Array.from(document.querySelectorAll('input[name="services[]"]:checked'))
                         .map(checkbox => checkbox.value);
 
                     const formData = {

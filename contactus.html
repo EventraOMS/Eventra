@@ -41,18 +41,7 @@
                 <span class="error-message" id="queryTypeError"></span>
             </div>
 
-            <div class="form-group">
-                <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" required>
-                <span class="error-message" id="emailError"></span>
-            </div>
-
-            <div class="form-group">
-                <label for="phone">Phone Number *</label>
-                <input type="tel" id="phone" name="phone" required>
-                <span class="error-message" id="phoneError"></span>
-            </div>
-
+            
             <div class="form-group">
                 <label for="subject">Subject *</label>
                 <input type="text" id="subject" name="subject" required>
@@ -156,18 +145,6 @@
                     isValid = false;
                 }
 
-                const email = formData.get('email');
-                if (!email || !email.includes('@')) {
-                    showError('email', 'Please enter a valid email address');
-                    isValid = false;
-                }
-
-                const phone = formData.get('phone');
-                if (!phone || phone.length < 10) {
-                    showError('phone', 'Please enter a valid phone number');
-                    isValid = false;
-                }
-
                 const subject = formData.get('subject');
                 if (!subject || subject.trim().length < 3) {
                     showError('subject', 'Subject must be at least 3 characters');
@@ -191,6 +168,15 @@
 
             form.addEventListener('submit', async function(e) {
                 e.preventDefault();
+
+                // Check if user is logged in
+                const token = localStorage.getItem('token');
+                if (!token) {
+                    alert('Please log in to submit the contact form');
+                    window.location.href = 'index.html';
+                    return;
+                }
+
                 const formData = new FormData(form);
 
                 if (!validateForm(formData)) {
@@ -208,6 +194,9 @@
 
                     const response = await fetch('http://localhost:3002/api/submit-contact', {
                         method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        },
                         body: formData
                     });
 
@@ -233,7 +222,7 @@
 
             // Real-time validation
             form.querySelectorAll('input, select, textarea').forEach(element => {
-                element.addEventListener('input', function() {
+                element.addEventListener('change', () => {
                     const formData = new FormData(form);
                     validateForm(formData);
                 });

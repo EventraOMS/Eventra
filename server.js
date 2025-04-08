@@ -101,6 +101,7 @@ db.connect((err) => {
             venue_preference TEXT,
             special_requirements TEXT,
             budget DECIMAL(10,2) NOT NULL DEFAULT 0.00,
+            services TEXT,
             status VARCHAR(20) DEFAULT 'Pending',
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             FOREIGN KEY (user_id) REFERENCES users(id)
@@ -111,6 +112,7 @@ db.connect((err) => {
     const createContactTableQuery = `
         CREATE TABLE IF NOT EXISTS contact_submissions (
             id INT AUTO_INCREMENT PRIMARY KEY,
+            user_id INT NOT NULL,
             query_type VARCHAR(50) NOT NULL,
             email VARCHAR(255) NOT NULL,
             phone VARCHAR(20) NOT NULL,
@@ -118,7 +120,8 @@ db.connect((err) => {
             content TEXT NOT NULL,
             needs_copy BOOLEAN DEFAULT false,
             file_path VARCHAR(255),
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (user_id) REFERENCES users(id)
         )
     `;
 
@@ -260,71 +263,81 @@ app.get('/api/profile', authenticateToken, (req, res) => {
 });
 
 // Handle contact form submissions
-app.post('/api/submit-contact', upload.single('attachment'), async (req, res) => {
+app.post('/api/submit-contact', authenticateToken, upload.single('attachment'), async (req, res) => {
     console.log('Received form submission:', req.body);
 
     try {
         // Validate required fields
-        const requiredFields = ['queryType', 'email', 'phone', 'subject', 'content', 'copy'];
+        const requiredFields = ['queryType', 'subject', 'content'];
         for (const field of requiredFields) {
             if (!req.body[field]) {
                 throw new Error(`Missing required field: ${field}`);
             }
         }
 
-        // Validate email format
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(req.body.email)) {
-            throw new Error('Invalid email format');
-        }
-
-        // Validate phone number (basic validation)
-        if (req.body.phone.length < 10) {
-            throw new Error('Invalid phone number');
-        }
-
         // Get file information if uploaded
         const filePath = req.file ? req.file.path : null;
 
-        // Insert into database
-        const query = `
-            INSERT INTO contact_submissions (
-                query_type,
-                email,
-                phone,
-                subject,
-                content,
-                needs_copy,
-                file_path
-            ) VALUES (?, ?, ?, ?, ?, ?, ?)
-        `;
-
-        const values = [
-            req.body.queryType,
-            req.body.email,
-            req.body.phone,
-            req.body.subject,
-            req.body.content,
-            req.body.copy === 'yes' ? 1 : 0,
-            filePath
-        ];
-
-        console.log('Executing query with values:', values);
-
-        db.query(query, values, (error, results) => {
-            if (error) {
-                console.error('Database error:', error);
-                return res.status(500).json({
-                    success: false,
-                    error: 'Failed to save to database: ' + error.message
-                });
+        // Get user details
+        const userQuery = 'SELECT email, phone FROM users WHERE id = ?';
+        db.query(userQuery, [req.user.id], async (userErr, userResults) => {
+            if (userErr) {
+                console.error('Error fetching user details:', userErr);
+                return res.status(500).json({ error: 'Error fetching user details' });
             }
 
-            console.log('Form data saved successfully:', results);
-            res.json({
-                success: true,
-                message: 'Form submitted successfully',
-                id: results.insertId
+            if (!userResults || userResults.length === 0) {
+                return res.status(404).json({ error: 'User not found' });
+            }
+
+            const user = userResults[0];
+
+            // Insert into database
+            const query = `
+                INSERT INTO contact_submissions (
+                    user_id,
+                    query_type,
+                    email,
+                    phone,
+                    subject,
+                    content,
+                    needs_copy,
+                    file_path
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            `;
+
+            const values = [
+                req.user.id,
+                req.body.queryType,
+                user.email,
+                user.phone,
+                req.body.subject,
+                req.body.content,
+                req.body.copy === 'yes' ? 1 : 0,
+                filePath
+            ];
+
+            console.log('Executing query with values:', values);
+
+            db.query(query, values, (error, results) => {
+                if (error) {
+                    console.error('Database error:', error);
+                    return res.status(500).json({
+                        success: false,
+                        error: 'Failed to save to database: ' + error.message
+                    });
+                }
+
+                console.log('Form data saved successfully:', results);
+                res.json({
+                    success: true,
+                    message: 'Form submitted successfully',
+                    id: results.insertId,
+                    userDetails: {
+                        email: user.email,
+                        phone: user.phone
+                    }
+                });
             });
         });
     } catch (error) {
@@ -381,10 +394,11 @@ app.post('/api/submit-event', authenticateToken, async (req, res) => {
             return res.status(400).json({ error: 'Guest count must be a number' });
         }
 
+        // Insert event submission
         const query = `
             INSERT INTO event_submissions 
-            (user_id, event_type, event_date, guest_count, venue_preference, special_requirements, budget, status)
-            VALUES (?, ?, ?, ?, ?, ?, ?, 'Pending')
+            (user_id, event_type, event_date, guest_count, venue_preference, special_requirements, budget, services, status)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'Pending')
         `;
 
         const values = [
@@ -394,7 +408,8 @@ app.post('/api/submit-event', authenticateToken, async (req, res) => {
             guestCountInt,
             venuePreference || null,
             message || null,
-            budget || 0.00
+            budget || 0.00,
+            services ? services.join(',') : null
         ];
 
         console.log('Final values being inserted:', values);
