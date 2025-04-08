@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Sign Up</title>
+        <link rel="stylesheet" href="styles.css">
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
         <script>
             function validateForm(event) {
@@ -21,7 +22,6 @@
                 let phonePattern = /^\+?[0-9]{10,15}$/;
                 let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 let passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
                 if (fname === "" || lname === "" || fname === null || lname === null) {
                     alert("First and Last Name are required.");
                     return false;
@@ -54,68 +54,13 @@
                     alert("Passwords do not match.");
                     return false;
                 }
-
-                // Create user object with correct field names matching server expectations
-                const userData = {
-                    fname: fname,
-                    lname: lname,
-                    age: parseInt(age),
-                    phone: phone,
-                    gender: gender.value,
-                    address: address,
-                    email: email,
-                    password: password
-                };
-
-                console.log('Sending signup request:', userData);
-
-                // Send POST request to create user
-                fetch('http://localhost:3002/api/signup', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify(userData)
-                })
-                .then(async response => {
-                    const data = await response.json();
-                    console.log('Server response:', data);
-                    
-                    if (!response.ok) {
-                        throw new Error(data.error || 'Failed to create account');
-                    }
-                    
-                    if (data.success) {
-                        alert("Account created successfully! Please log in.");
-                        window.location.href = 'index.html';
-                    } else {
-                        throw new Error(data.error || 'Failed to create account');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert(error.message || "An error occurred. Please try again.");
-                });
-
-                return false;
+                alert("Form submitted successfully!");
+                document.getElementById("signup-form").submit();
             }
         </script>
     </head>
     <body ng-controller="SignupController">
-        <header>
-            <nav id="navbar">
-                <ul class="nav-list">
-                <li><a href="./home.html"><img height="25%" width="25%" src="./images/logo.png" alt=""></a></li>
-                <a href="./About us.html"><li>About Us</li></a>
-                <a href="./services.html"><li>Services</li></a>
-                <a href="./portfolios.html"><li>Portfolios</li></a>
-                <a href="./blog.html"><li>Blog</li></a>
-                <a href="./contactus.html"><li>Contact Us</li></a>
-                <a href=""><li>User</li></a>
-                </ul>
-            </nav>
-        </header>
+        
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -184,10 +129,10 @@
                 color: white;
             }
             .form-buttons input[type="submit"] {
-                background-color: #28a745;
+                background-color: rgb(12, 121, 194);
             }
             .form-buttons input[type="reset"] {
-                background-color: #dc3545;
+                background-color: rgb(12, 121, 194);
             }
             .form-buttons input:hover {
                 opacity: 0.8;
