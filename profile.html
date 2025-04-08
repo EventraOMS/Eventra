@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile - Eventra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
         .profile-container {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 40px auto;
             background-color: white;
-            padding: 20px;
+            padding: 30px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
@@ -23,20 +21,22 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
         .profile-title {
             margin: 0;
             color: #333;
+            font-size: 2em;
         }
         .back-button {
-            padding: 8px 16px;
+            padding: 10px 20px;
             background-color: #255aec;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             text-decoration: none;
+            font-weight: 500;
         }
         .back-button:hover {
             background-color: #0845c7;
@@ -47,45 +47,62 @@
             gap: 20px;
         }
         .info-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         .info-label {
-            font-weight: bold;
+            font-weight: 600;
             color: #666;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            font-size: 0.9em;
         }
         .info-value {
             color: #333;
-            padding: 8px;
+            padding: 12px;
             background-color: #f9f9f9;
             border-radius: 4px;
+            font-size: 1em;
         }
         .logout-button {
-            padding: 8px 16px;
+            padding: 10px 20px;
             background-color: #f44336;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             margin-left: 10px;
+            font-weight: 500;
         }
         .logout-button:hover {
             background-color: #da190b;
         }
         .loading {
             text-align: center;
-            padding: 20px;
-            font-size: 18px;
+            padding: 30px;
+            font-size: 1.2em;
             color: #666;
         }
         .error {
             color: #f44336;
             text-align: center;
-            padding: 20px;
+            padding: 30px;
+            font-size: 1.2em;
         }
     </style>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="./home.html"><img height="25%" width="25%" src="./images/logo.png" alt="Eventra Logo"></a></li>
+            <a href="./home.html"><li>Home</li></a>
+            <a href="./About us.html"><li>About Us</li></a>
+            <a href="./services.html"><li>Services</li></a>
+            <a href="./portfolios.html"><li>Portfolios</li></a>
+            <a href="./blog.html"><li>Blog</li></a>
+            <a href="./contactus.html"><li>Contact Us</li></a>
+            <a href="./index.html"><li>User</li></a>
+        </ul>
+    </nav>
+
     <div class="profile-container">
         <div class="profile-header">
             <h1 class="profile-title">My Profile</h1>
@@ -99,6 +116,40 @@
         </div>
     </div>
 
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>Eventra</h4>
+                <p>Creating unforgettable moments through exceptional event planning and execution.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="./home.html">Home</a><br>
+                <a href="./About us.html">About Us</a><br>
+                <a href="./services.html">Services</a><br>
+                <a href="./portfolios.html">Portfolios</a><br>
+                <a href="./blog.html">Blog</a><br>
+                <a href="./contactus.html">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>Email: info@eventra.com</p>
+                <p>Phone: +1 234 567 890</p>
+                <p>Address: 123 Event Street, Celebration City</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><img src="./images/yt.png" alt="Facebook"></a>
+                    <a href="#"><img src="./images/insta.png" alt="Instagram"></a>
+                    <a href="#"><img src="./images/x.png" alt="Twitter"></a>
+                    <a href="#"><img src="./images/linkedin.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
     <script>
         // Check if user is logged in
         const token = localStorage.getItem('token');
