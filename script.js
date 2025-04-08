@@ -67,15 +67,7 @@ forms.forEach(form => {
     });
 });
 
-// Mobile menu toggle
-const mobileMenuBtn = document.createElement('button');
-mobileMenuBtn.className = 'mobile-menu-btn';
-mobileMenuBtn.innerHTML = '☰';
-document.querySelector('nav').prepend(mobileMenuBtn);
 
-mobileMenuBtn.addEventListener('click', () => {
-    document.querySelector('nav ul').classList.toggle('active');
-});
 
 // Add active class to current page in navigation
 const currentPage = window.location.pathname.split('/').pop();
